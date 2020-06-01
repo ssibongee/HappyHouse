@@ -9,6 +9,10 @@
 		select * from userinfo where id = #{id} and password = #{password}
 	</select>
 
+	<select id="findPw" resultType="com.happyhouse.dto.UserInfo">
+		select * from userinfo where name = #{name} and id = #{id} and phone = #{phone}
+	</select>
+
 	<select id="detail" resultType="com.happyhouse.dto.UserInfo">
 		select * from userinfo where id = #{id}
 	</select>
@@ -22,7 +26,7 @@
     </update>
     
     <delete id="delete">
-    delete from userinfo where id = #{id}
-  </delete>
+		delete from userinfo where id = #{id}
+  	</delete>
   
 </mapper>

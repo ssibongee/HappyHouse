@@ -42,4 +42,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 		return dao.login(id, password);
 	}
 
+	@Override
+	public UserInfo findPw(String name, String id, String phone) {
+		return dao.findPw(name, id, phone);
+	}
+
 }

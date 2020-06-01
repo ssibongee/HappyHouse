@@ -48,4 +48,9 @@ public class UserInfoDaoImpl implements UserInfoDao {
 		}
  	}
 
+	@Override
+	public UserInfo findPw(String name, String id, String phone) {
+		return mapper.findPw(name, id, phone);
+	}
+
 }

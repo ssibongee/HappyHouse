@@ -71,9 +71,9 @@
 		</header>
 		
 		<div class="container" align="center">
-			<form method="post" action="list.main">
+			<form >
 				<h2>회원 정보를 삭제하였습니다.</h2>
-				<input type="submit" class="btn btn-primary"  value="메인으로 돌아가기">
+				<a class="btn btn-primary" href="/happyhouse/">메인으로</a>
 			</form>
 		</div>
 		
