@@ -104,10 +104,10 @@
 			</table>
 		</div>	
 		
-		<!-- Footer -->
-		<%@ include file="/main/footer.jsp"%>
-		
-		<!-- JavaScript -->
-	  	<%@ include file="/main/script.jsp"%>
+		 <!-- Footer -->
+      <%@ include file="/WEB-INF/views/footer.jsp"%>
+	
+	  <!-- JavaScript -->
+	  <%@ include file="/WEB-INF/views/script.jsp"%>
 	</body>
 </html>

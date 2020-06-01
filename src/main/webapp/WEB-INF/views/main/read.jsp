@@ -130,11 +130,11 @@
 		
 		 <hr>
 	
-	  <!-- Footer -->
-	  <%@ include file="/main/footer.jsp"%>
+	 <!-- Footer -->
+      <%@ include file="/WEB-INF/views/footer.jsp"%>
 	
 	  <!-- JavaScript -->
-	  <%@ include file="/main/script.jsp"%>
+	  <%@ include file="/WEB-INF/views/script.jsp"%>
 	  
 	</body>
 </html>
