@@ -123,7 +123,7 @@
 				<tr><td><strong>지번</strong></td><td>${ house.jibun }</td></tr>
 			</table>
 <%-- 			<a href="${ root }/list.main">돌아가기</a> --%>
-			<form class="form-group" action="list.main" method="post">
+			<form class="form-group" action="/happyhouse/" method="get">
 				<button type="submit" class="btn btn-primary">돌아가기</button>
 			</form>
 		</div>

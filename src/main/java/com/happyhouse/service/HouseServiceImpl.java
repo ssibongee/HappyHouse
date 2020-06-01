@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.happyhouse.dao.HouseDao;
+import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
 import com.happyhouse.dto.SidoCode;
 
@@ -41,4 +42,9 @@ public class HouseServiceImpl implements HouseService{
 		return dao.selectApt(dong);
 	}
 
+	@Override
+	public HouseDeal search(int no) throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.search(no);
+	}
 }

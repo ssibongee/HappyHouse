@@ -26,4 +26,8 @@
 		SELECT no,dong,AptName,code,jibun, buildYear FROM houseinfo WHERE dong = #{dong}
 		order by aptname
 	</select>
+	
+	<select id="search" resultType="com.happyhouse.dto.HouseDeal">
+		select * from housedeal where aptname like (select aptname from houseinfo where no = #{no}) limit 1
+	</select>
 </mapper>

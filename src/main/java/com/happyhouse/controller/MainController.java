@@ -13,9 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.service.HouseService;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
@@ -35,7 +36,6 @@ public class MainController<T> {
 	@GetMapping("/list")
 	public ArrayList<T> search(String condition, HttpServletRequest request) throws SQLException {
 		System.out.println("check");
-		Map<String, String> map = new HashMap<>();
 		ArrayList<T> list = null;
 		if (condition.equals("sido")) { // 드롭다운으로 시도를 검색한 경우 구군 결과를 반영해준다.
 			list = (ArrayList<T>) service.selectSido();
@@ -45,12 +45,23 @@ public class MainController<T> {
 			list = (ArrayList<T>) service.selectDong(Integer.parseInt(request.getParameter("gugun")));
 		} else if (condition.equals("apt")) {
 			list = (ArrayList<T>) service.selectApt(request.getParameter("dong"));
+			for(T h : list) {
+				System.out.println(h.toString());
+			}
 		}
 		
 		request.setAttribute("title", "거래 내역 조회");
 		
 		return list;
 	}
+	
+	@GetMapping("/{no}")
+	public String read(@PathVariable String no, Model model) throws SQLException {
+		HouseDeal h = service.search(Integer.parseInt(no));
+		model.addAttribute("house", h);
+		return "/main/read";
+	}
+	
 	
 	@GetMapping("/introduce")
 	public String introduce(Model model) {
@@ -59,12 +70,11 @@ public class MainController<T> {
 		return "/main/introduce";
 	}
 
-	@GetMapping("/notice")
-	public String notice(Model model) {
-		model.addAttribute("title", "NOTICE");
-		model.addAttribute("desc", "공지사항을 알려드립니다.");
-		return "/main/notice";
-	}
+	/*
+	 * @GetMapping("/notice") public String notice(Model model) {
+	 * model.addAttribute("title", "NOTICE"); model.addAttribute("desc",
+	 * "공지사항을 알려드립니다."); return "/main/notice"; }
+	 */
 
 	@GetMapping("/sitemap")
 	public String sitemap(Model model) {

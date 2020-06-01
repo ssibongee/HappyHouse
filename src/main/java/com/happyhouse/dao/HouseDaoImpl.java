@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
 import com.happyhouse.dto.SidoCode;
 import com.happyhouse.mapper.HouseMapper;
@@ -39,6 +40,12 @@ public class HouseDaoImpl implements HouseDao{
 	public ArrayList<HouseInfo> selectApt(String dong) throws SQLException {
 		// TODO Auto-generated method stub
 		return mapper.selectApt(dong);
+	}
+
+	@Override
+	public HouseDeal search(int no) throws SQLException {
+		// TODO Auto-generated method stub
+		return mapper.search(no);
 	}
 
 }

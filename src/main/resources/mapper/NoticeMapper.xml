@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.happyhouse.mapper.NoticeMapper">
+
+	<select id="searchAll" resultType="com.happyhouse.dto.NoticeInfo">
+		select * from notice;
+	</select>
+
+	<select id="detail" resultType="com.happyhouse.dto.NoticeInfo">
+		select * from notice where num = #{num}
+	</select>
+
+	<!-- <insert id="insert">
+		insert into notice values(null, #{title}, #{content}, sysdate(), 0)
+	</insert>
+
+	<update id="update">
+		update notice set title=#{title}, content=#{content}
+		where num=#{num}
+	</update>
+
+	<delete id="delete">
+		delete from notice where num=#{num}
+	</delete> -->
+	
+	<update id="countUp">
+		update notice set count = count + 1 where num = #{num}
+	</update>
+</mapper>

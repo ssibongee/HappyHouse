@@ -97,7 +97,7 @@
 						$("#result").empty();
 						$("#searchResult").empty();
 						$.each(data, function (index, vo) {
-							let str = "<h4>" + "<a href='${root}/read.main?no=" + vo.no + "'>" + vo.AptName + "</a></h4>" + "<br>"
+							let str = "<h4>" + "<a href='${root}/" + vo.no + "'>" + vo.aptName + "</a></h4>" + "<br>"
 								+ "<h6>" + "동이름    : " + vo.dong + "</h6>" + "<br>" 
 								+ "<h6>" + "건축연도 : " + vo.buildYear + "</h6>" + "<br>"
 								+ "<h6>" + "지번       : " + vo.jibun + "</h6>" + "<br><hr><br>";
@@ -117,7 +117,7 @@
 				let tmpLng;
 				$.get("https://maps.googleapis.com/maps/api/geocode/json"
 					, {
-						key: 'AIzaSyC3Jh6Rt72qHXe5GomCfP_4LAuHjs_sr0U'
+						key: 'AIzaSyBRqpnVB72Spgxoku0ANWfm1uwSe1xlmlg'
 						, address: vo.dong + "+" + vo.AptName + "+" + vo.jibun
 					}
 					, function (data, status) {
@@ -136,7 +136,7 @@
 
 	<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3Jh6Rt72qHXe5GomCfP_4LAuHjs_sr0U&callback=initMap"></script>
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRqpnVB72Spgxoku0ANWfm1uwSe1xlmlg&callback=initMap"></script>
 	<script>
 		var multi = { lat: 37.5665734, lng: 126.978179 };
 		var map;
