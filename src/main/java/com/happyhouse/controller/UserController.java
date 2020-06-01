@@ -84,8 +84,8 @@ public class UserController {
 		String id = (String)session.getAttribute("id");
 		System.out.println("id : "+id);
 		UserInfo u = service.detail(id);
-		model.addAttribute("title", "UPDATE");
-		model.addAttribute("desc", "회원정보 수정 페이지 입니다.");
+		model.addAttribute("title", "USER INFO.");
+		model.addAttribute("desc", "회원정보 페이지 입니다.");
 		model.addAttribute("userInfo", u);
 		return "/user/searchUser";
 	}

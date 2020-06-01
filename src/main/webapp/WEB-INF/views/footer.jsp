@@ -22,7 +22,7 @@
 						</a>
 					</li>
 					<li class="list-inline-item">
-						<a href="https://lab.ssafy.com/jane3999591/happyhouse_web_front.git">
+						<a href="https://lab.ssafy.com/ssibongee/happyhousespring.git">
 							<span class="fa-stack fa-lg">
 								<i class="fas fa-circle fa-stack-2x"></i>
 								<i class="fab fa-github fa-stack-1x fa-inverse"></i>

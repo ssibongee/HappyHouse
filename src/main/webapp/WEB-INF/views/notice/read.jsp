@@ -15,7 +15,7 @@
 
 	
 		<div class="container" align="center">
-		<jsp:include page="/user/loginCheck.jsp" />
+<%-- 		<jsp:include page="/user/loginCheck.jsp" /> --%>
 		 	<br><br>
 			<table class="table">
 				<tr>
