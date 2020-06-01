@@ -57,7 +57,7 @@
 <!-- 		</nav> -->
 		
 		<!-- Page Header -->
-		<header class="masthead" style="background-image: url('res/img/apartment.jpg')">
+		<header class="masthead" style="background-image: url('resources/res/img/apartment.jpg')">
 		  <div class="overlay"></div>
 		  <div class="container">
 		    <div class="row">
