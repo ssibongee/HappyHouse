@@ -41,8 +41,8 @@
 				</tr>
 			</table>
 			<br>
-			<form >
-				<a type="button" class="btn btn-primary" href="/happyhouse/notice">확인</a>
+			<form action="/happyhouse/notice" method="get">
+				<button type="submit" class="btn btn-primary" id="sendMessageButton">확인</button>
 			</form>
 <!-- 			<a href="list.notice">확인</a><br><br> -->
 			<br><br>
