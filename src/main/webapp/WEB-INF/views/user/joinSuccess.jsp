@@ -15,10 +15,10 @@
 		<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 		
 		<div class="container" align="center">
-			<form method="post" action="list.main">
+			<form>
 				<h2>회원가입에 성공하였습니다.</h2>
 				<br>
-				<input type="submit" class="btn btn-primary" value="메인으로 돌아가기">
+				<a class="btn btn-primary" href="/happyhouse/">메인으로</a>
 			</form>
 		</div>
 		

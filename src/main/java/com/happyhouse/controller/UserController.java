@@ -25,9 +25,7 @@ import com.happyhouse.service.UserInfoService;
 public class UserController {
 	
 	@Autowired
-	UserInfoService service;
-	
-	
+	UserInfoService service;	
 	
 	// 로그인
 	@PostMapping("/login")
@@ -69,19 +67,6 @@ public class UserController {
 			String referer = request.getHeader("Referer");
 			return "redirect:"+referer;
 		}
-	}
-
-//	@GetMapping("/update")
-//	public String changePw(Model model) {
-//		model.addAttribute("title", "UPDATE");
-//		model.addAttribute("desc", "회원정보 수정 페이지 입니다.");
-//		return "/user/update";
-//	}
-	
-	@PostMapping("/update")
-	public String changePw2(UserInfo ui, Model model) {
-		
-		return "/user/updateSuccess";
 	}
 	
 	
@@ -125,13 +110,44 @@ public class UserController {
 		  return "redirect:/user";
 	  }
 	  
+	  //비밀번호 수정 페이지로 이동
+	  @GetMapping("/findPw")
+	  public String findPw(String pw, Model model) {
+		  model.addAttribute("title", "CHANGE PW");
+		  model.addAttribute("desc", "비밀번호 수정 페이지입니다.");
+		  return "/user/passwordSearch";
+	  }
+
+	  //비밀번호 수정
+	  @PostMapping("/changePw") 
+	  public String changePw(UserInfo u, HttpSession session) {
+		  service.update(u);
+		  return "redirect:/";
+	  }
+
+	  //비밀번호 수정 위한 본인인증 
+	  @PostMapping("/findPw")
+	  public String findPw2(String name, String id, String phone, HttpServletRequest request, RedirectAttributes redirectAttributes) {
+		  if(service.findPw(name, id, phone) != null) {
+			  request.setAttribute("title", "CHANGE PW");
+			  request.setAttribute("desc", "비밀번호 수정 페이지입니다. ");
+			  request.setAttribute("auth_msg", "본인 인증에 성공하였습니다.");			  
+			  return "/user/modifyPassword";
+
+		  } else {
+			  redirectAttributes.addFlashAttribute("auth_msg", "본인 인증에 실패하였습니다.");
+			  String referer = request.getHeader("Referer");
+			  return "redirect:"+referer;
+		  }
+	  }
+	  
 	  // 회원 탈퇴
 	  @GetMapping("/delete")
 	  public String delete(HttpSession session, Model model) {
 		  String id = (String)session.getAttribute("id");
 		  service.delete(id);
 		  session.invalidate();
-		  return "redirect:/";
+		  return "/user/deleteSuccess";
 	  }
 	  
 	@ExceptionHandler

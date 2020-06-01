@@ -21,11 +21,11 @@
 								<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
 								  LOGIN
 								</button>	
-								<a href="/happyhouse/findPw" type="button" class="btn btn-primary btn-lg">
-								  FIND PW
-								</a>	
 								<a href="/happyhouse/join" type="button" class="btn btn-primary btn-lg">
 								  JOIN
+								</a><br><br>	
+								<a href="/happyhouse/findPw" class="btn btn-warning btn-xs">
+								  비밀번호 수정
 								</a>	
 							</div>
 							<!-- Modal -->
