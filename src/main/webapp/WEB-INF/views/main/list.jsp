@@ -51,13 +51,13 @@
 	<script>
 		let colorArr = ['table-primary', 'table-success', 'table-danger'];
 		$(document).ready(function () {
-			$.get("${pageContext.request.contextPath}/FSelectBoxController"
-				, { command: "sido" }
+			$.get("${root}/list"
+				, { condition: "sido" }
 				, function (data, status) {
 					//$("#sido").empty();
-					$.each(data, function (index, vo) {
+					$.each(data, function (index, map) {
 						
-						$("#sido").append("<option value='" + vo.sido_code + "'>" + vo.sido_name + "</option>");
+						$("#sido").append("<option value='" + map.sido_code + "'>" + map.sido_name + "</option>");
 					});//each
 				}//function
 				, "json"
@@ -65,8 +65,8 @@
 		});//ready
 		$(document).ready(function () {
 			$("#sido").change(function () {
-				$.get("${pageContext.request.contextPath}/FSelectBoxController"
-					, { command: "gugun", sido: $("#sido").val() }
+				$.get("${root}/list"
+					, { condition: "gugun", sido: $("#sido").val() }
 					, function (data, status) {
 						$("#gugun").empty();
 						$("#gugun").append('<option value="0">시/군/구</option>');
@@ -78,8 +78,8 @@
 				);//get
 			});//change
 			$("#gugun").change(function () {
-				$.get("${pageContext.request.contextPath}/FSelectBoxController"
-					, { command: "dong", gugun: $("#gugun").val() }
+				$.get("${root}/list"
+					, { condition: "dong", gugun: $("#gugun").val() }
 					, function (data, status) {
 						$("#dong").empty();
 						$("#dong").append('<option value="0">동</option>');
@@ -91,8 +91,8 @@
 				);//get
 			});//change
 			$("#dong").change(function () {
-				$.get("${pageContext.request.contextPath}/FSelectBoxController"
-					, { command: "apt", dong: $("#dong").val() }
+				$.get("${root}/list"
+					, { condition: "apt", dong: $("#dong").val() }
 					, function (data, status) {
 						$("#result").empty();
 						$("#searchResult").empty();
