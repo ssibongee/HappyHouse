@@ -13,7 +13,7 @@
 		select * from notice where num = #{num}
 	</select>
 
-	<!-- <insert id="insert">
+	<insert id="insert">
 		insert into notice values(null, #{title}, #{content}, sysdate(), 0)
 	</insert>
 
@@ -24,7 +24,7 @@
 
 	<delete id="delete">
 		delete from notice where num=#{num}
-	</delete> -->
+	</delete> 
 	
 	<update id="countUp">
 		update notice set count = count + 1 where num = #{num}

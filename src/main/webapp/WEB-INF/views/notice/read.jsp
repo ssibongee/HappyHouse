@@ -15,8 +15,6 @@
 
 	
 		<div class="container" align="center">
-		<jsp:include page="/user/loginCheck.jsp" />
-		 	<br><br>
 			<table class="table">
 				<tr>
 					<td align="center" class="table-success"><b>번호</b></td>
@@ -44,14 +42,14 @@
 				</tr>
 			</table>
 			<br>
-			<form action="list.notice" method="post">
+			<form action="/happyhouse/notice" method="get">
 				<button type="submit" class="btn btn-primary" id="sendMessageButton">확인</button>
 			</form>
 <!-- 			<a href="list.notice">확인</a><br><br> -->
 			<br><br>
-			<c:if test="${user.id == 'admin' }">
-				<a href="updateForm.notice?num=${notice.num }">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="delete.notice?num=${notice.num }">삭제하기</a>
+			<c:if test="${sessionScope.id == 'admin' }">
+				<a href="/happyhouse/notice/update/${notice.num }">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/happyhouse/notice/delete/${ notice.num }">삭제하기</a>
 			</c:if>
 		</div> 
 		
