@@ -15,8 +15,6 @@
 
 	
 		<div class="container" align="center">
-<%-- 		<jsp:include page="/user/loginCheck.jsp" /> --%>
-		 	<br><br>
 			<table class="table">
 				<tr>
 					<td align="center" class="table-success"><b>번호</b></td>

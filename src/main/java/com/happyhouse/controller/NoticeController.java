@@ -34,14 +34,18 @@ public class NoticeController {
 
 	// 글 작성 페이지로 이동
 
-	/*
-	 * @GetMapping("/") public String insertForm() { return "글 작성 페이지"; }
-	 * 
-	 * // 글 작성
-	 * 
-	 * @PostMapping("/") public String insert(NoticeInfo n) throws SQLException {
-	 * service.insert(n); return "redirect:/notice"; }
-	 */
+	@GetMapping("/notice/insert")
+	public String insertForm() {
+		return "/notice/regForm";
+	}
+
+	// 글 작성
+
+	@PostMapping("/notice/insert")
+	public String insert(NoticeInfo n) throws SQLException {
+		service.insert(n);
+		return "redirect:/notice/";
+	}
 
 	// 글 읽기
 
@@ -52,16 +56,33 @@ public class NoticeController {
 		return "/notice/read";
 	}
 
+	
+	// 글 수정 페이지로 이동
+	@GetMapping("/notice/update/{num}")
+	public String updateForm(@PathVariable String num, Model model) throws SQLException {
+		NoticeInfo n = service.detail(num);
+		model.addAttribute("notice", n);
+		return "/notice/updateForm";
+	}
+	
+	@PostMapping("/notice/update") 
+	public String update(NoticeInfo n) throws SQLException {
+		service.update(n);
+		return "redirect:/notice/";
+	}
 	/*
 	 * // 글 수정
 	 * 
 	 * @PutMapping("/notice/{num}") public String update(@PathVariable String num,
 	 * NoticeInfo n) throws SQLException { service.update(n); return
 	 * "redirect:/notice/" + num; }
-	 * 
-	 * // 글 삭제
-	 * 
-	 * @DeleteMapping("/notice/{num}") public String delete(@PathVariable String
-	 * num) throws SQLException { service.delete(num); return "redirect:/notice"; }
 	 */
+	// 글 삭제
+
+	@GetMapping("/notice/delete/{num}")
+	public String delete(@PathVariable String num) throws SQLException {
+		service.delete(num);
+		return "redirect:/notice/";
+	}
+
 }

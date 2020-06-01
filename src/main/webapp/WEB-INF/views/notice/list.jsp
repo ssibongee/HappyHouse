@@ -65,9 +65,9 @@
 				공지사항이 없습니다!
 			</c:if>
 		<br>
-		<c:if test="${user.id =='admin'}">
+		<c:if test="${ sessionScope.id =='admin'}">
 			<!-- 				<a href="regForm.notice">공지 등록</a> -->
-			<form action="regForm.notice" method="post">
+			<form action="/happyhouse/notice/insert" method="get">
 				<button type="submit" class="btn btn-primary" id="sendMessageButton">공지
 					등록</button>
 			</form>
