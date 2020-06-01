@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html>
    <!-- header -->
-   <%@ include file="/WEB-INF/views/head.jsp"%>
-   
-   <body>
-      <!-- Navigation -->
-      <%@ include file="/WEB-INF/views/nav.jsp"%>
-      
-      <!-- Page Header -->
-      <%@ include file="/WEB-INF/views/pageHeader.jsp"%>
-
+	<%@ include file="/WEB-INF/views/head.jsp"%>
+	
+	<body>
+	<!-- Navigation -->
+	<%@ include file="/WEB-INF/views/nav.jsp"%>
+	
+	<!-- Page Header -->
+	<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 	
 		<div class="container" align="center">
 			<table class="table">
@@ -42,8 +41,8 @@
 				</tr>
 			</table>
 			<br>
-			<form action="list.notice" method="post">
-				<button type="submit" class="btn btn-primary" id="sendMessageButton">확인</button>
+			<form >
+				<a type="button" class="btn btn-primary" href="/happyhouse/notice">확인</a>
 			</form>
 <!-- 			<a href="list.notice">확인</a><br><br> -->
 			<br><br>
@@ -61,5 +60,6 @@
    
      <!-- JavaScript -->
      <%@ include file="/WEB-INF/views/script.jsp"%>
+     
    </body>
 </html>

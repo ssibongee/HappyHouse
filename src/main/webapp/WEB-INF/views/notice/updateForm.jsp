@@ -3,10 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-<!-- header -->
-<%@ include file="/WEB-INF/views/head.jsp"%>
-
-<body>
+	<!-- header -->
+	<%@ include file="/WEB-INF/views/head.jsp"%>
+	
+	<body>
 	<!-- Navigation -->
 	<%@ include file="/WEB-INF/views/nav.jsp"%>
 
@@ -50,21 +50,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- 		<div align="center"> -->
-	<%-- 		<jsp:include page="/user/loginCheck.jsp" /> --%>
-	<!-- 		<h1>공지사항 수정하기</h1> -->
-	<%-- 			 	${msg }<br> --%>
-	<!-- 			<form method="post" action="update.notice"> -->
-	<!-- 				제목<br> -->
-	<%-- 				<input type="text" name="title" value="${notice.title }"><br> --%>
-	<!-- 				내용<br> -->
-	<%-- 				<textarea name="content" rows="8" cols="50">${notice.content }</textarea>			 --%>
-	<!-- 				<br> -->
-	<%-- 				<input type="hidden" name="num" value="${notice.num }"> --%>
-	<!-- 				<input type="submit" value="수정"> -->
-	<!-- 			</form> -->
-	<!-- 		</div> -->
 
 	<hr>
 
