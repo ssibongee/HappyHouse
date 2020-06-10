@@ -64,17 +64,18 @@ public class QnAController {
 	}
 	
 	// QnA Reply 등록
-	@PutMapping("/qna/reply/{no}")
+	@PutMapping("/qna/reply")
 	public void insertReply(@RequestBody QnA qna) throws SQLException {
+		System.out.println("content : "+qna.getReplyContent());
 		service.insertReply(qna);
 	}
 	// QnA Reply 수정
-	@PutMapping("/qna/reply/update/{no}")
+	@PutMapping("/qna/reply/update")
 	public void updateReply(@RequestBody QnA qna) throws SQLException {
 		service.updateReply(qna);
 	}
 	// QnA Reply 삭제
-	@PutMapping("/qna/reply/delete/{no}")
+	@PutMapping("/qna/reply/delete")
 	public void deleteReply(@PathVariable String no) throws SQLException {
 		service.deleteReply(no);
 	}
