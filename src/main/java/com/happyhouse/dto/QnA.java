@@ -12,6 +12,18 @@ public class QnA {
 	private Date replyDatetime;
 	private String replyUserid;
 
+	public QnA(int qnaNo, String qnaTitle, String qnaContent, String qnaUserid, Date qnaDatetime, String replyContent,
+			Date replyDatetime, String replyUserid) {
+		this.qnaNo = qnaNo;
+		this.qnaTitle = qnaTitle;
+		this.qnaContent = qnaContent;
+		this.qnaUserid = qnaUserid;
+		this.qnaDatetime = qnaDatetime;
+		this.replyContent = replyContent;
+		this.replyDatetime = replyDatetime;
+		this.replyUserid = replyUserid;
+	}
+
 	public int getQnaNo() {
 		return qnaNo;
 	}
@@ -74,6 +86,13 @@ public class QnA {
 
 	public void setReplyUserid(String replyUserid) {
 		this.replyUserid = replyUserid;
+	}
+
+	@Override
+	public String toString() {
+		return "QnA [qnaNo=" + qnaNo + ", qnaTitle=" + qnaTitle + ", qnaContent=" + qnaContent + ", qnaUserid="
+				+ qnaUserid + ", qnaDatetime=" + qnaDatetime + ", replyContent=" + replyContent + ", replyDatetime="
+				+ replyDatetime + ", replyUserid=" + replyUserid + "]";
 	}
 
 }

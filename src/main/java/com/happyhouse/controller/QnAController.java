@@ -34,6 +34,12 @@ public class QnAController {
 	public QnA read(@PathVariable String no) throws SQLException {
 		return service.selectOne(no);
 	}
+
+	// QnA 게시글 수정페이지
+	@GetMapping("/qna/update/{no}")
+	public QnA updatePage(@PathVariable String no) throws SQLException {
+		return service.selectOne(no);
+	}
 	
 	
 	// QnA 등록
@@ -50,8 +56,9 @@ public class QnAController {
 	
 	
 	// QnA 수정
-	@PutMapping("qna/{no}")
+	@PutMapping("/qna")
 	public void update(@RequestBody QnA qna) throws SQLException {
+		System.out.println(qna.toString());
 		service.update(qna);
 	}
 }
