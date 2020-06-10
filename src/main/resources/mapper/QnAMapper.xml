@@ -44,4 +44,21 @@
 		where qna_no = #{qnaNo}
 	</update>
 	
+	<update id="insertReply">
+		update qna_board set reply_content = #{replyContent}, reply_datetime = sysdate(), 
+		reply_userid = #{replyUserid}
+		where qna_no = #{qnaNo} 
+	</update>
+	
+	<update id="updateReply">
+		update qna_board set reply_content = #{replyContent}, reply_datetime = sysdate(), 
+		where qna_no = #{qnaNo} 
+	</update>
+	
+	<update id="deleteReply">
+		update qna_board set reply_content = null, reply_datetime = null, 
+		reply_userid = null
+		where qna_no = #{qnaNo} 
+	</update>
+	
 </mapper>

@@ -45,4 +45,22 @@ public class QnADaoImpl implements QnADao {
 		mapper.delete(no);
 	}
 
+	@Override
+	public void insertReply(QnA q) throws SQLException {
+		// TODO Auto-generated method stub
+		mapper.insertReply(q);
+	}
+
+	@Override
+	public void updateReply(QnA q) throws SQLException {
+		// TODO Auto-generated method stub
+		mapper.updateReply(q);
+	}
+
+	@Override
+	public void deleteReply(String no) throws SQLException {
+		// TODO Auto-generated method stub
+		mapper.deleteReply(no);
+	}
+
 }

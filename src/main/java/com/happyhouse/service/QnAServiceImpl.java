@@ -45,4 +45,22 @@ public class QnAServiceImpl implements QnAService {
 		dao.delete(no);
 	}
 
+	@Override
+	public void insertReply(QnA q) throws SQLException {
+		// TODO Auto-generated method stub
+		dao.insertReply(q);
+	}
+
+	@Override
+	public void updateReply(QnA q) throws SQLException {
+		// TODO Auto-generated method stub
+		dao.updateReply(q);
+	}
+
+	@Override
+	public void deleteReply(String no) throws SQLException {
+		// TODO Auto-generated method stub
+		dao.deleteReply(no);
+	}
+
 }
