@@ -3,6 +3,8 @@ package com.happyhouse.service;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.RequestBody;
+
 import com.happyhouse.dto.QnA;
 
 public interface QnAService {
@@ -25,5 +27,5 @@ public interface QnAService {
 	// Reply 수정
 	public void updateReply(QnA q) throws SQLException;
 	// Reply 삭제
-	public void deleteReply(String no) throws SQLException;
+	public void deleteReply(QnA q) throws SQLException;
 }

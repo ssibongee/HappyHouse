@@ -58,9 +58,9 @@ public class QnADaoImpl implements QnADao {
 	}
 
 	@Override
-	public void deleteReply(String no) throws SQLException {
+	public void deleteReply(QnA q) throws SQLException {
 		// TODO Auto-generated method stub
-		mapper.deleteReply(no);
+		mapper.deleteReply(q);
 	}
 
 }

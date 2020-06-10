@@ -26,5 +26,5 @@ public interface QnAMapper {
 	// Reply 수정
 	public void updateReply(QnA q) throws SQLException;
 	// Reply 삭제
-	public void deleteReply(String no) throws SQLException;
+	public void deleteReply(QnA q) throws SQLException;
 }
