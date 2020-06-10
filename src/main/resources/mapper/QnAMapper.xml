@@ -30,6 +30,10 @@
 			where qna_no = #{no}
 	</select>
 	
+	<insert id="insert">
+		insert into qna_board(qna_title, qna_content, qna_userid)
+		values (#{qnaTitle}, #{qnaContent}, #{qnaUserid})
+	</insert>
 	
 	<delete id="delete">
 		delete from qna_board where qna_no = #{no}
