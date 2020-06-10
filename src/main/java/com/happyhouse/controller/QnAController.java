@@ -61,4 +61,21 @@ public class QnAController {
 		System.out.println(qna.toString());
 		service.update(qna);
 	}
+	
+	// QnA Reply 등록
+	@PutMapping("/qna/reply/{no}")
+	public void insertReply(@RequestBody QnA qna) throws SQLException {
+		service.insertReply(qna);
+	}
+	// QnA Reply 수정
+	@PutMapping("/qna/reply/update/{no}")
+	public void updateReply(@RequestBody QnA qna) throws SQLException {
+		service.updateReply(qna);
+	}
+	// QnA Reply 삭제
+	@PutMapping("/qna/reply/delete/{no}")
+	public void deleteReply(@PathVariable String no) throws SQLException {
+		service.deleteReply(no);
+	}
+	
 }

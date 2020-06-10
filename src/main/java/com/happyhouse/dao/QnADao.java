@@ -20,4 +20,11 @@ public interface QnADao {
 	
 	// QnA 삭제하기
 	public void delete(String no) throws SQLException;
+	
+	// Reply 등록
+	public void insertReply(QnA q) throws SQLException;
+	// Reply 수정
+	public void updateReply(QnA q) throws SQLException;
+	// Reply 삭제
+	public void deleteReply(String no) throws SQLException;
 }
