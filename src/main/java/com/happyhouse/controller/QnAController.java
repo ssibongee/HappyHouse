@@ -75,7 +75,7 @@ public class QnAController {
 		service.updateReply(qna);
 	}
 	// QnA Reply 삭제
-	@PutMapping("/qna/reply/delete")
+	@PutMapping("/qna/reply/delete/{no}")
 	public void deleteReply(@PathVariable String no) throws SQLException {
 		service.deleteReply(no);
 	}
