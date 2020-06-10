@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.happyhouse.mapper.QnAMapper">
+	<select id="selectAll" resultType="com.happyhouse.dto.QnA">
+		select qna_no as qnaNo,
+			qna_title as qnaTitle,
+			qna_content as qnaContent,
+			qna_userid qnaUserid ,
+			qna_datetime as qnaDatetime,
+			reply_content as replyContent,
+			reply_datetime as replyDatetime,
+			reply_userid as replyUserid
+			from qna_board
+			order by qna_no
+	</select>
+
+</mapper>
