@@ -4,15 +4,14 @@
 <!DOCTYPE html>
 <html>
    <!-- header -->
-   <%@ include file="/WEB-INF/views/head.jsp"%>
-   
-   <body>
-      <!-- Navigation -->
-      <%@ include file="/WEB-INF/views/nav.jsp"%>
-      
-      <!-- Page Header -->
-      <%@ include file="/WEB-INF/views/pageHeader.jsp"%>
-
+	<%@ include file="/WEB-INF/views/head.jsp"%>
+	
+	<body>
+	<!-- Navigation -->
+	<%@ include file="/WEB-INF/views/nav.jsp"%>
+	
+	<!-- Page Header -->
+	<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 	
 		<div class="container" align="center">
 			<table class="table">
@@ -47,9 +46,9 @@
 			</form>
 <!-- 			<a href="list.notice">확인</a><br><br> -->
 			<br><br>
-			<c:if test="${sessionScope.id == 'admin' }">
-				<a href="/happyhouse/notice/update/${notice.num }">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="/happyhouse/notice/delete/${notice.num }">삭제하기</a>
+			<c:if test="${user.id == 'admin' }">
+				<a href="updateForm.notice?num=${notice.num }">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="delete.notice?num=${notice.num }">삭제하기</a>
 			</c:if>
 		</div> 
 		
@@ -61,5 +60,6 @@
    
      <!-- JavaScript -->
      <%@ include file="/WEB-INF/views/script.jsp"%>
+     
    </body>
 </html>
