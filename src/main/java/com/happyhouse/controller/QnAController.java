@@ -45,6 +45,7 @@ public class QnAController {
 	// QnA 등록
 	@PostMapping("/qna")
 	public void insert(@RequestBody QnA qna) throws SQLException {
+		System.out.println("qna : "+qna.getQnaTitle());
 		service.insert(qna);
 	}
 	
