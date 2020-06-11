@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-				<div class="page-heading">
+				<div class="page-heading" style="padding-top: 100px; padding-bottom: 50px;">
 					<h1>${title}</h1>
 					<span class="subheading">${ desc }</span>
 					<div class="container" align="center">
@@ -18,13 +18,13 @@
 						<c:if test="${ empty id }">
 							<!-- Button trigger modal -->
 							<div class="container">
-								<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login">
+								<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login" style="padding-top: 5px; padding-bottom: 5px;">
 								  LOGIN
 								</button>	
-								<a href="/happyhouse/join" type="button" class="btn btn-primary btn-lg">
+								<a href="/happyhouse/join" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
 								  JOIN
-								</a><br><br>	
-								<a href="/happyhouse/findPw" class="btn btn-warning btn-xs">
+								</a>
+								<a href="/happyhouse/findPw" class="btn btn-warning btn-xs" style="padding-top: 5px; padding-bottom: 5px;">
 								  비밀번호 수정
 								</a>	
 							</div>
@@ -44,16 +44,16 @@
 							</div>	
 						</c:if>
 						<c:if test="${!empty id}">
-							<p class="bg-info">
+							<p class="bg-info" style="margin: 10px;">
 								${id }님, 반갑습니다!!<br>
 							</p>
-							<a type="button" href="/happyhouse/logout"class="btn btn-primary btn-lg">
+							<a type="button" href="/happyhouse/logout"class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
 							  LOGOUT 
 							</a>						
-							<a href="/happyhouse/user" type="button" class="btn btn-primary btn-lg">
+							<a href="/happyhouse/user" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
 							  	회원정보
 							</a>	
-							<a href="/happyhouse/delete" id="delete_btn" type="button" class="btn btn-primary btn-lg">
+							<a href="/happyhouse/delete" id="delete_btn" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
 							 	 회원 탈퇴 
 							</a>	
 						</c:if>

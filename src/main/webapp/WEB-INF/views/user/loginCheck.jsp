@@ -18,7 +18,6 @@
             <p class="help-block text-danger"></p>
           </div>
         </div>
-        <br>
         <div id="success"></div>
         <div class="form-group">
 		<input type="submit" class="btn btn-primary" value="LOGIN">

@@ -11,7 +11,6 @@
 <body>
 	<!-- Navigation -->
 	<%@ include file="/WEB-INF/views/nav.jsp"%>
-
 	<!-- Page Header -->
 	<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 	
