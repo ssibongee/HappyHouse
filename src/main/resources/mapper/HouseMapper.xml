@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="selectApt" resultType="com.happyhouse.dto.HouseInfo">
-		SELECT no,dong,AptName,code,jibun, buildYear FROM houseinfo WHERE dong = #{dong}
+		SELECT no,dong,AptName,code,jibun, buildYear, lat, lng FROM houseinfo WHERE dong = #{dong}
 		order by aptname
 	</select>
 	
