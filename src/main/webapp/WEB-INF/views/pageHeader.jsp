@@ -44,18 +44,20 @@
 							</div>	
 						</c:if>
 						<c:if test="${!empty id}">
-							<p class="bg-info" style="margin: 10px;">
-								${id }님, 반갑습니다!!<br>
-							</p>
-							<a type="button" href="/happyhouse/logout"class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
-							  LOGOUT 
-							</a>						
-							<a href="/happyhouse/user" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
-							  	회원정보
-							</a>	
-							<a href="/happyhouse/delete" id="delete_btn" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;">
-							 	 회원 탈퇴 
-							</a>	
+						<span>
+							<div class="bg-info" style="margin: 10px;">
+								${id }님, 반갑습니다!!												
+							</div>
+							<a type="button" href="/happyhouse/logout"class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px; align: right;">
+								  LOGOUT 
+							</a>
+						</span>
+<!-- 							<a href="/happyhouse/user" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;"> -->
+<!-- 							  	회원정보 -->
+<!-- 							</a>	 -->
+<!-- 							<a href="/happyhouse/delete" id="delete_btn" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;"> -->
+<!-- 							 	 회원 탈퇴  -->
+<!-- 							</a>	 -->
 						</c:if>
 					</div>
 				</div>

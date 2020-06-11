@@ -150,6 +150,13 @@ public class UserController {
 		  return "/user/deleteSuccess";
 	  }
 	  
+	  @GetMapping("/myPage")
+		public String introduce(Model model) {
+			model.addAttribute("title", "MY PAGE");
+			model.addAttribute("desc", "마이 페이지 입니다.");
+			return "/user/myPage";
+		}
+	  
 	@ExceptionHandler
 	public String handler(Exception ex, Model model) {
 		model.addAttribute("title", "ERROR!!");

@@ -13,11 +13,18 @@
 		
 		<!-- Page Header -->
 		<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
+
+		<!-- side bar -->
+		<%@ include file="/WEB-INF/views/side.jsp"%>
 		
 		<div class="container" align="center">
 			<h2>내 정보 조회</h2>
 			${msg }
-			<table class="table">
+			<table class="table" style="width: 80%;">
+				<tr>
+					<td width=100 align=center class="warning" height="22"><b>이름</b></td>
+					<td width=490 style="padding-left:10">&nbsp;${userInfo.name }</td>
+				</tr>
 				<tr>
 					<td width=100 align=center class="warning" height="22"><b>아이디</b></td>
 					<td width=490 style="padding-left:10">&nbsp;${userInfo.id }</td>
@@ -25,10 +32,6 @@
 				<tr>
 					<td width=100 align=center class="warning" height="22"><b>비밀번호</b></td>
 					<td width=490  style="padding-left:10">&nbsp;${userInfo.password }</td>
-				</tr>
-				<tr>
-					<td width=100 align=center class="warning" height="22"><b>이름</b></td>
-					<td width=490 style="padding-left:10">&nbsp;${userInfo.name }</td>
 				</tr>
 				<tr>
 					<td width=100 align=center class="warning" height="22"><b>주소</b></td>

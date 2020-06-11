@@ -33,6 +33,10 @@
 			</table>
 		</div>	
 		
+		<div align="center">
+			
+		</div>
+		
 		 <!-- Footer -->
       <%@ include file="/WEB-INF/views/footer.jsp"%>
 	

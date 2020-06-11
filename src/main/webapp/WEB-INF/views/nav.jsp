@@ -23,6 +23,11 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/happyhouse/sitemap">사이트맵</a>
 				</li>
+				<c:if test="${!empty id}">
+					<li class="nav-item">
+						<a class="nav-link" href="/happyhouse/myPage">마이페이지</a>
+					</li>
+				</c:if>
 			</ul>
 		</div>
 			<hr>
