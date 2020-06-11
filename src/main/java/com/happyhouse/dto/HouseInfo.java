@@ -101,11 +101,14 @@ public class HouseInfo implements Serializable, Comparable<HouseInfo> {
 		}
 		return 0;
 	}
+
 	@Override
 	public String toString() {
-		return "HouseInfo [no=" + no + ", dong=" + dong + ", AptName=" + aptName + ", code=" + code + ", buildYear="
-				+ buildYear + ", jibun=" + jibun + ", img=" + img + "]";
+		return "HouseInfo [no=" + no + ", dong=" + dong + ", aptName=" + aptName + ", code=" + code + ", buildYear="
+				+ buildYear + ", jibun=" + jibun + ", lat=" + lat + ", lng=" + lng + ", img=" + img + "]";
 	}
+	
+	
 }
 
 

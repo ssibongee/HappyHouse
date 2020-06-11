@@ -104,6 +104,7 @@
 							$("#result").append(str);
 							$("#searchResult").append(vo.dong + " " + vo.AptName + " " + vo.jibun + "<br>");
 						});//each
+						console.log(data);
 						geocode(data);
 					}//function
 					, "json"
@@ -112,16 +113,18 @@
 		});//ready
 		function geocode(jsonData) {
 			let idx = 0;
+			console.log(jsonData);
 			$.each(jsonData, function (index, vo) {
+				console.log(vo.aptName);
 				let tmpLat;
 				let tmpLng;
-				$.get("https://maps.googleapis.com/maps/api/geocode/json"
-					, {
-						key: 'AIzaSyBRqpnVB72Spgxoku0ANWfm1uwSe1xlmlg'
-						, address: vo.dong + "+" + vo.AptName + "+" + vo.jibun
-					}
-					, function (data, status) {
-						//alert(data.results[0].geometry.location.lat);
+				let address = vo.dong + "+" + vo.aptName + "+" + vo.jibun;
+				let key = 'AIzaSyBz53kMLEDhvfaYo9r-4GuSn5zy4Lju4rM';
+				let url = "https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key;
+				console.log(url);
+				$.get("https://maps.googleapis.com/maps/api/geocode/json?address="+address+"&key="+key
+					, function (data) {
+						console.log(data.results[0]);
 						tmpLat = data.results[0].geometry.location.lat;
 						tmpLng = data.results[0].geometry.location.lng;
 						$("#lat_" + index).text(tmpLat);
@@ -136,7 +139,7 @@
 
 	<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRqpnVB72Spgxoku0ANWfm1uwSe1xlmlg&callback=initMap"></script>
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz53kMLEDhvfaYo9r-4GuSn5zy4Lju4rM&callback=initMap"></script>
 	<script>
 		var multi = { lat: 37.5665734, lng: 126.978179 };
 		var map;
@@ -153,8 +156,6 @@
 				label: aptName,
 				title: aptName
 			});
-			console.log(aptName);
-			console.log(no);
 			marker.addListener('click', function () {
 				map.setZoom(20);
 				map.setCenter(marker.getPosition());
@@ -163,8 +164,7 @@
 			marker.setMap(map);
 		}
 		function callHouseDealInfo(no) {
-			document.getElementById("no").value = no;
-			document.getElementById("pageform").action = "${root}/read.main";
+			document.getElementById("pageform").action = "${root}/"+no;
 			document.getElementById("pageform").submit();
 		}
 	</script>
