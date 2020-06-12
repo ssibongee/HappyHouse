@@ -47,23 +47,24 @@ public class MainController<T> {
 			list = (ArrayList<T>) service.selectDong(Integer.parseInt(request.getParameter("gugun")));
 		} else if (condition.equals("apt")) {
 			list = (ArrayList<T>) service.selectApt(request.getParameter("dong"));
-			for (T h : list) {
+			for(T h : list) {
 				System.out.println(h.toString());
 			}
 		}
-
+		
 		request.setAttribute("title", "거래 내역 조회");
-
+		
 		return list;
 	}
-
+	
 	@GetMapping("/{no}")
 	public String read(@PathVariable String no, Model model) throws SQLException {
 		HouseDeal h = service.search(Integer.parseInt(no));
 		model.addAttribute("house", h);
 		return "/main/read";
 	}
-
+	
+	
 	@GetMapping("/introduce")
 	public String introduce(Model model) {
 		model.addAttribute("title", "INTRODUCE");
@@ -83,20 +84,16 @@ public class MainController<T> {
 //		model.addAttribute("desc", "");
 		return "/main/sitemap";
 	}
-
+	
+	
+	
+	
+	
 	@ExceptionHandler
 	public String handler(Exception ex, Model model) {
 		model.addAttribute("title", "ERROR!!");
 		model.addAttribute("ex", ex.getMessage());
-		return "errorPage";// view page
-	}
+		return "errorPage";//view page
+	}	
 
-	// Detail 페이지에서 주변 상권 정보를 검색
-	// condtion : 가게명/업종명 word : 검색어
-	@GetMapping("/{no}/{condition}/{word}")
-	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition,
-			@PathVariable String word) throws SQLException {
-
-		return null;
-	}
 }
