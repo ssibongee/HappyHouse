@@ -30,4 +30,17 @@
 	<select id="search" resultType="com.happyhouse.dto.HouseDeal">
 		select * from housedeal where aptname like (select aptname from houseinfo where no = #{no}) limit 1
 	</select>
+	
+	<select id="isMarked" resultType="com.happyhouse.dto.BookMark">
+		select * from bookmark where id=#{id} and no = #{no}
+	</select>
+	
+	<select id="addToMark">
+		insert into bookmark values(#{id}, #{no}, #{dong}, #{aptName});
+	</select>
+	
+	<delete id="deleteMark">
+		delete from bookmark where id=#{id} and no = #{no}
+	</delete>
+	
 </mapper>

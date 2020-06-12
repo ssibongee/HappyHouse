@@ -15,10 +15,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.Commercial;
 import com.happyhouse.dto.HouseDeal;
+import com.happyhouse.service.BookMarkService;
 import com.happyhouse.service.HouseService;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
@@ -27,6 +31,9 @@ public class MainController<T> {
 
 	@Autowired
 	HouseService service;
+	
+	@Autowired
+	BookMarkService bmService;
 
 	@GetMapping("/")
 	public String main(Model model, HttpSession session) {
@@ -51,16 +58,17 @@ public class MainController<T> {
 				System.out.println(h.toString());
 			}
 		}
-		
 		request.setAttribute("title", "거래 내역 조회");
-		
 		return list;
 	}
 	
 	@GetMapping("/{no}")
-	public String read(@PathVariable String no, Model model) throws SQLException {
+	public String read(@PathVariable String no, Model model, HttpSession session) throws SQLException {
+		String id = (String)session.getAttribute("id");
 		HouseDeal h = service.search(Integer.parseInt(no));
 		model.addAttribute("house", h);
+		model.addAttribute("marked", bmService.isMarked(id, h.getNo()));
+		System.out.println("marked : "+bmService.isMarked(id, h.getNo()));
 		return "/main/read";
 	}
 	
@@ -81,13 +89,8 @@ public class MainController<T> {
 	@GetMapping("/sitemap")
 	public String sitemap(Model model) {
 		model.addAttribute("title", "SITE MAP");
-//		model.addAttribute("desc", "");
 		return "/main/sitemap";
 	}
-	
-	
-	
-	
 	
 	@ExceptionHandler
 	public String handler(Exception ex, Model model) {

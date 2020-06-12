@@ -50,9 +50,5 @@ public class UserInfoServiceImpl implements UserInfoService {
 		return dao.findPw(name, id, phone);
 	}
 
-	@Override
-	public List<BookMark> getAllBookMark(String id) {
-		return dao.getAllBookMark(id);
-	}
 
 }

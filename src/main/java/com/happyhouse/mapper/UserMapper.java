@@ -23,7 +23,4 @@ public interface UserMapper {
 	
 	// 로그인
 	public UserInfo login(String id, String password);
-	
-	// 북마크 불러오기
-	public List<BookMark> getAllBookMark(String id);
 }
