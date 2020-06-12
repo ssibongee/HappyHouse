@@ -64,16 +64,6 @@ public class MainController<T> {
 		return "/main/read";
 	}
 	
-	// Detail 페이지에서 주변 상권 정보를 검색 
-	// condtion : 가게명/업종명  word : 검색어
-	@GetMapping("/{no}/{condition}/{word}")
-	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition, @PathVariable String word) throws SQLException {
-		HouseDeal h = service.search(Integer.parseInt(no));
-		
-		return null;
-	}
-	
-	
 	
 	@GetMapping("/introduce")
 	public String introduce(Model model) {
