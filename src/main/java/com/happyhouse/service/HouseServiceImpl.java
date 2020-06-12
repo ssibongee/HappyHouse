@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dao.HouseDao;
 import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
@@ -47,4 +48,5 @@ public class HouseServiceImpl implements HouseService{
 		// TODO Auto-generated method stub
 		return dao.search(no);
 	}
+
 }

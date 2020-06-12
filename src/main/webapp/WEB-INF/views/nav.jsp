@@ -30,7 +30,7 @@
 						<a class="nav-link" href="/happyhouse/myPage">마이페이지</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/happyhouse/qna">QnA</a>
+						<a class="nav-link" href="/happyhouse/qna">Q&A</a>
 					</li>
 				</c:if>
 			</ul>

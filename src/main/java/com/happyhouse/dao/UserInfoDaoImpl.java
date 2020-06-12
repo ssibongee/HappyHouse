@@ -55,10 +55,4 @@ public class UserInfoDaoImpl implements UserInfoDao {
 	public UserInfo findPw(String name, String id, String phone) {
 		return mapper.findPw(name, id, phone);
 	}
-
-	@Override
-	public List<BookMark> getAllBookMark(String id) {
-		return mapper.getAllBookMark(id);
-	}
-
 }

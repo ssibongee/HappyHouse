@@ -26,6 +26,7 @@
 				<td width=100 height="22"><b>법정동</b></td>
 				<td width=100 height="22"><b>아파트 이름</b></td>
 				<td width=100 height="22"></td>
+				<td width=100 height="22"></td>
 			</tr>
 			<c:if test="${list != null }">
 				<c:forEach var="bookmark" items="${list}">
@@ -34,6 +35,7 @@
 						<td>&nbsp;${bookmark.dong }</td>
 						<td>&nbsp;${bookmark.aptName}</td>
 						<td>&nbsp;<a href="/happyhouse/${ bookmark.no }">상세보기</a></td>
+						<td>&nbsp;<a href="#">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

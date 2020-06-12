@@ -24,6 +24,4 @@ public interface UserInfoService {
 	// 로그인
 	public boolean login(String id, String password);
 	
-	// 북마크 불러오기
-	public List<BookMark> getAllBookMark(String id);
 }

@@ -168,18 +168,6 @@ public class UserController {
 			return "/user/myPage";
 		}
 	  
-	  @GetMapping("/bookmark")
-		public String bookmark(Model model, HttpSession session) {
-		  	String id = (String)session.getAttribute("id");
-			model.addAttribute("title", "BOOK MARK");
-			model.addAttribute("desc", "북마크 해놓은 정보를 바로 조회해볼 수 있습니다.");
-			List<BookMark> list = service.getAllBookMark(id);
-			if(list.size() != 0) {
-				model.addAttribute("list", list);				
-			}
-			return "user/bookmark";
-		}
-	  
 	@ExceptionHandler
 	public String handler(Exception ex, Model model) {
 		model.addAttribute("title", "ERROR!!");

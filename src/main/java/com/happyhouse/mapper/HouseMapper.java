@@ -3,6 +3,7 @@ package com.happyhouse.mapper;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
 import com.happyhouse.dto.SidoCode;

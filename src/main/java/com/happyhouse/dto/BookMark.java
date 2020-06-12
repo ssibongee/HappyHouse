@@ -4,14 +4,14 @@ public class BookMark {
 	private String id;
 	private int no;
 	private String dong;
-	private String AptName;
+	private String aptName;
 	
-	public BookMark(String id, int no, String dong, String AptName) {
+	public BookMark(String id, int no, String dong, String aptName) {
 		super();
 		this.id = id;
 		this.no = no;
 		this.dong = dong;
-		this.AptName = AptName;
+		this.aptName = aptName;
 	}
 
 	public String getId() {
@@ -39,15 +39,15 @@ public class BookMark {
 	}
 
 	public String getAptName() {
-		return AptName;
+		return aptName;
 	}
 
-	public void setAptName(String AptName) {
-		AptName = AptName;
+	public void setAptName(String aptName) {
+		this.aptName = aptName;
 	}
 
 	@Override
 	public String toString() {
-		return "BookMark [id=" + id + ", no=" + no + ", dong=" + dong + ", aptName=" + AptName + "]";
+		return "BookMark [id=" + id + ", no=" + no + ", dong=" + dong + ", aptName=" + aptName + "]";
 	}
 }
