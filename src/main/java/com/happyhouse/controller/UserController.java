@@ -1,5 +1,7 @@
 package com.happyhouse.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.UserInfo;
 import com.happyhouse.service.UserInfoService;
 
@@ -150,11 +153,31 @@ public class UserController {
 		  return "/user/deleteSuccess";
 	  }
 	  
+//	  @ResponseBody
+//	  @DeleteMapping("/delete")
+//	  public void delete(HttpSession session, Model model) {
+//		  String id = (String)session.getAttribute("id");
+//		  service.delete(id);
+//		  session.invalidate();
+//	  }
+	  
 	  @GetMapping("/myPage")
 		public String introduce(Model model) {
 			model.addAttribute("title", "MY PAGE");
 			model.addAttribute("desc", "마이 페이지 입니다.");
 			return "/user/myPage";
+		}
+	  
+	  @GetMapping("/bookmark")
+		public String bookmark(Model model, HttpSession session) {
+		  	String id = (String)session.getAttribute("id");
+			model.addAttribute("title", "BOOK MARK");
+			model.addAttribute("desc", "북마크 해놓은 정보를 바로 조회해볼 수 있습니다.");
+			List<BookMark> list = service.getAllBookMark(id);
+			if(list.size() != 0) {
+				model.addAttribute("list", list);				
+			}
+			return "user/bookmark";
 		}
 	  
 	@ExceptionHandler

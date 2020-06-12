@@ -36,7 +36,7 @@
 		</table>
 		<c:if test="${list == null }">
 				공지사항이 없습니다!
-			</c:if>
+		</c:if>
 		<br>
 		<c:if test="${ sessionScope.id =='admin'}">
 			<!-- 				<a href="regForm.notice">공지 등록</a> -->

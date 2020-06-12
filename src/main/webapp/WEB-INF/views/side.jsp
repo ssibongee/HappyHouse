@@ -10,7 +10,7 @@
 					<h4>회원 정보 수정</h4>
 				</a>
 				<hr>
-				<a href="#">
+				<a href="/happyhouse/bookmark">
 					<h4>북마크</h4>
 				</a>
 				<hr>
@@ -19,7 +19,7 @@
 				</a>
 				<hr>
 <!-- 				<a href="/happyhouse/delete"> -->
-				<a onclick="delete">
+				<a href="#">
 					<h4>회원 탈퇴</h4>
 				</a>
 			</div>

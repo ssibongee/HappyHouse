@@ -1,9 +1,12 @@
 package com.happyhouse.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.happyhouse.dao.UserInfoDao;
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.UserInfo;
 
 @Service
@@ -45,6 +48,11 @@ public class UserInfoServiceImpl implements UserInfoService {
 	@Override
 	public UserInfo findPw(String name, String id, String phone) {
 		return dao.findPw(name, id, phone);
+	}
+
+	@Override
+	public List<BookMark> getAllBookMark(String id) {
+		return dao.getAllBookMark(id);
 	}
 
 }

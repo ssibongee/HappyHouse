@@ -26,7 +26,7 @@
 							<h2>회원 정보 수정</h2>
 						</a>
 						<hr>
-						<a href="#">
+						<a href="/happyhouse/bookmark">
 							<h2>북마크</h2>
 						</a>
 						<hr>
