@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.happyhouse.dto.Commercial;
 import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.service.HouseService;
 
@@ -63,6 +64,16 @@ public class MainController<T> {
 		return "/main/read";
 	}
 	
+	// Detail 페이지에서 주변 상권 정보를 검색 
+	// condtion : 가게명/업종명  word : 검색어
+	@GetMapping("/{no}/{condition}/{word}")
+	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition, @PathVariable String word) throws SQLException {
+		HouseDeal h = service.search(Integer.parseInt(no));
+		
+		return null;
+	}
+	
+	
 	
 	@GetMapping("/introduce")
 	public String introduce(Model model) {
@@ -83,6 +94,10 @@ public class MainController<T> {
 //		model.addAttribute("desc", "");
 		return "/main/sitemap";
 	}
+	
+	
+	
+	
 	
 	@ExceptionHandler
 	public String handler(Exception ex, Model model) {
