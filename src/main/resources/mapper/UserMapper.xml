@@ -28,5 +28,9 @@
     <delete id="delete">
 		delete from userinfo where id = #{id}
   	</delete>
+  	
+  	<select id="getAllBookMark" resultType="com.happyhouse.dto.BookMark">
+  		select * from bookmark where id = #{id}
+  	</select>
   
 </mapper>

@@ -1,5 +1,8 @@
 package com.happyhouse.service;
 
+import java.util.List;
+
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.UserInfo;
 
 public interface UserInfoService {
@@ -20,4 +23,7 @@ public interface UserInfoService {
 	
 	// 로그인
 	public boolean login(String id, String password);
+	
+	// 북마크 불러오기
+	public List<BookMark> getAllBookMark(String id);
 }

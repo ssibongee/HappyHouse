@@ -1,5 +1,8 @@
 package com.happyhouse.mapper;
 
+import java.util.List;
+
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.UserInfo;
 
 public interface UserMapper {
@@ -20,4 +23,7 @@ public interface UserMapper {
 	
 	// 로그인
 	public UserInfo login(String id, String password);
+	
+	// 북마크 불러오기
+	public List<BookMark> getAllBookMark(String id);
 }

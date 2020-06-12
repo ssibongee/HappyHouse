@@ -1,8 +1,11 @@
 package com.happyhouse.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.UserInfo;
 import com.happyhouse.mapper.UserMapper;
 
@@ -51,6 +54,11 @@ public class UserInfoDaoImpl implements UserInfoDao {
 	@Override
 	public UserInfo findPw(String name, String id, String phone) {
 		return mapper.findPw(name, id, phone);
+	}
+
+	@Override
+	public List<BookMark> getAllBookMark(String id) {
+		return mapper.getAllBookMark(id);
 	}
 
 }
