@@ -15,7 +15,6 @@ import com.happyhouse.mapper.UserMapper;
 public class BookMarkDAOImpl implements BookMarkDAO {
 	@Autowired
 	BookMarkMapper mapper;
-	
 
 	@Override
 	public List<BookMark> getAllBookMark(String id) {

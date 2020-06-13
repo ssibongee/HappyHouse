@@ -3,7 +3,7 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
    
-<mapper namespace="com.happyhouse.mapper.HouseMapper">
+<mapper namespace="com.happyhouse.mapper.CommercialMapper">
 	
 	<!-- 검색조건 : 가게이름 or 업태명 ex) 스타벅스 or 카페   -->
 	<select id="search" resultType="com.happyhouse.dto.Commercial">
