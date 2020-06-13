@@ -101,6 +101,7 @@ public class MainController<T> {
 
 	
 	// 주변 환경정보 검색
+	@ResponseBody
 	@GetMapping("/{no}/{condition}/{word}")
 	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition, @PathVariable String word) throws NumberFormatException, SQLException {
 		HouseInfo h = cservice.selectOne(no);

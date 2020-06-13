@@ -14,6 +14,7 @@
 		and lat like concat('%', #{lat}, '%')
 		and lng like concat('%', #{lng}, '%')
 	</select>
+	
 	<select id="searchCode" resultType="com.happyhouse.dto.Commercial">
 		select * 
 		from commercialarea
