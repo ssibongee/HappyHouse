@@ -47,10 +47,7 @@ public class BookMarkController {
 		System.out.println("dong "+bm.getDong());
 		System.out.println("aptName "+bm.getAptName());
 		service.addToMark(bm);
-		//추가 하고 그 페이지로 다시
-		String referer = request.getHeader("Referer");
-		System.out.println("redirect:"+referer);
-		return "redirect:"+referer;
+		return "redirect:/"+bm.getNo();
 	}
 	
 	@GetMapping("/bookmark/delete/{id}/{no}")

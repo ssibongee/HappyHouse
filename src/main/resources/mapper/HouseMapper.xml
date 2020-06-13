@@ -28,7 +28,11 @@
 	</select>
 	
 	<select id="search" resultType="com.happyhouse.dto.HouseDeal">
-		select * from housedeal where aptname like (select aptname from houseinfo where no = #{no}) limit 1
+<!-- 		select * from housedeal where aptname like (select aptname from houseinfo where no = #{no}) limit 1 -->
+		select * from housedeal where aptname like (select aptname from houseinfo where no = #{no}) 
+									and dong like (select dong from houseinfo where no = #{no})
+		limit 1
+<!-- 		select * from houseInfo where aptname like (select aptname from houseinfo where no = #{no}) limit 1 -->
 	</select>
 	
 	<select id="isMarked" resultType="com.happyhouse.dto.BookMark">
