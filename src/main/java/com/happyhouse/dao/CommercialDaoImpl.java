@@ -18,9 +18,24 @@ public class CommercialDaoImpl implements CommercialDao {
 	
 	
 	@Override
-	public ArrayList<Commercial> search(String condition, String word) throws SQLException {
+	public ArrayList<Commercial> searchShop(String condition, String word, String lat, String lng, String dong) throws SQLException {
 		// TODO Auto-generated method stub
-		return mapper.search(condition, word);
+		return mapper.searchShop(condition, word, lat, lng, dong);
+	}
+
+
+	@Override
+	public HouseInfo selectOne(String no) throws SQLException {
+		// TODO Auto-generated method stub
+		return mapper.selectOne(no);
+	}
+
+
+	@Override
+	public ArrayList<Commercial> searchCode(String condition, String word, String lat, String lng, String dong)
+			throws SQLException {
+		// TODO Auto-generated method stub
+		return mapper.searchCode(condition, word, lat, lng, dong);
 	}
 
 }

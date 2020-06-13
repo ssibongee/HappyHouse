@@ -17,9 +17,22 @@ public class CommercialServiceImpl implements CommercialService {
 	CommercialDao dao;
 	
 	@Override
-	public ArrayList<Commercial> search(String condition, String word) throws SQLException {
+	public ArrayList<Commercial> searchShop(String condition, String word, String lat, String lng, String dong) throws SQLException {
 		// TODO Auto-generated method stub
-		return dao.search(condition, word);
+		return dao.searchShop(condition, word, lat, lng, dong);
+	}
+
+	@Override
+	public HouseInfo selectOne(String no) throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.selectOne(no);
+	}
+
+	@Override
+	public ArrayList<Commercial> searchCode(String condition, String word, String lat, String lng, String dong)
+			throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.searchCode(condition, word, lat, lng, dong);
 	}
 
 }

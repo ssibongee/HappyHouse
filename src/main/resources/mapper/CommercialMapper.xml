@@ -6,18 +6,26 @@
 <mapper namespace="com.happyhouse.mapper.CommercialMapper">
 	
 	<!-- 검색조건 : 가게이름 or 업태명 ex) 스타벅스 or 카페   -->
-	<select id="search" resultType="com.happyhouse.dto.Commercial">
+	<select id="searchShop" resultType="com.happyhouse.dto.Commercial">
 		select * 
 		from commercialarea
-		where dong = #{dong} and
-		<if test="codename3 != ''">
-			codename3 like concat('%', #{codename3}, '%')
-		</if>
-		<if test="shopname != ''">
-			shopname like concat('%', #{shopname}, '%')
-		</if>
-		and lat like concat ('%', #{lat}, '%')
-		and lng like concat ('%', #{lng}, '%')
+		where dong like concat('%', #{dong}, '%')
+		and shopname like concat('%', #{word}, '%')
+		and lat like concat('%', #{lat}, '%')
+		and lng like concat('%', #{lng}, '%')
+	</select>
+	<select id="searchCode" resultType="com.happyhouse.dto.Commercial">
+		select * 
+		from commercialarea
+		where dong like concat('%', #{dong}, '%')
+		and codename3 like concat('%', #{word}, '%')
+		and lat like concat('%', #{lat}, '%')
+		and lng like concat('%', #{lng}, '%')
+	</select>
+	
+	<!-- 위의 검색을 수행하기 위해서 HouseInfo 정보를 먼저 받아와야함 -->
+	<select id="selectOne" resultType="com.happyhouse.dto.HouseInfo">
+		select * from houseinfo where no = #{no} limit 1
 	</select>
 </mapper>
 
