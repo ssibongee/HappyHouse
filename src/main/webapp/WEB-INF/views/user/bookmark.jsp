@@ -35,7 +35,7 @@
 						<td>&nbsp;${bookmark.dong }</td>
 						<td>&nbsp;${bookmark.aptName}</td>
 						<td>&nbsp;<a href="/happyhouse/${ bookmark.no }">상세보기</a></td>
-						<td>&nbsp;<a href="#">삭제</a></td>
+						<td>&nbsp;<a href="/happyhouse/bookmark/delete/${id}/${bookmark.no}">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

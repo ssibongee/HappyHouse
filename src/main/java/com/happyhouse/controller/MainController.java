@@ -67,6 +67,7 @@ public class MainController<T> {
 		String id = (String)session.getAttribute("id");
 		HouseDeal h = service.search(Integer.parseInt(no));
 		model.addAttribute("house", h);
+		model.addAttribute("no", no);
 		model.addAttribute("marked", bmService.isMarked(id, Integer.parseInt(no)));
 		System.out.println("/happhouse/{no}");
 		System.out.println("id : "+id);

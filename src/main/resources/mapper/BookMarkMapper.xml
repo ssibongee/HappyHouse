@@ -19,6 +19,5 @@
 	
 	<delete id="deleteMark">
 		delete from bookmark where id=#{id} and no = #{no}
-	</delete>
-	
+	</delete>	
 </mapper>

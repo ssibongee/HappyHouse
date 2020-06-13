@@ -50,14 +50,10 @@ public class BookMarkController {
 		service.addToMark(bm);
 		return "redirect:/"+bm.getNo();
 		// 추가 하고 그 페이지로 다시
-//		String referer = request.getHeader("Referer");
-//		System.out.println("redirect:" + referer);
-//		return "redirect:" + referer;
 	}
 
 	@GetMapping("/bookmark/delete/{id}/{no}")
-	public String deleteBookMark(HttpServletRequest request, @PathVariable int no, @PathVariable String id)
-			throws SQLException {
+	public String deleteBookMark(HttpServletRequest request, @PathVariable int no, @PathVariable String id) throws SQLException {
 		service.deleteMark(id, no);
 		System.out.println("delete bookmark");
 		System.out.println("id : " + id);

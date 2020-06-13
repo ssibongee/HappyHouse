@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.happyhouse.dto.BookMark;
+import com.happyhouse.dto.HouseDeal;
 
 public interface BookMarkService {
 

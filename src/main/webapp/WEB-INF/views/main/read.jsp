@@ -26,23 +26,28 @@
 				<tr><td><strong>법정동</strong></td><td>${ house.dong }</td></tr>
 				<tr><td><strong>지번</strong></td><td>${ house.jibun }</td></tr>
 			</table>
-			<button onclick="window.history.go(-1)" class="btn btn-primary">돌아가기</button>
-			<c:if test="${!empty id}">
-				<c:if test="${marked == true}">
-					<input name="id" value="${id}" readonly/>
-					<input name="no" value="${house.no}" readonly/>
-					<a type="button" href="/bookmark/delete/${id}/${house.no}" onclick="arlert('${house.no} 삭제');" class="btn btn-danger">북마크에서 삭제</a>
+			<div>
+				<button onclick="window.history.go(-1)" class="btn btn-primary">돌아가기</button>			
+			</div>
+			<div>
+				<c:if test="${!empty id}">
+					<c:if test="${marked == true}">
+						<input type="hidden" name="id" value="${id}" readonly/>
+						<input type="hidden" name="no" value="${no}" readonly/>
+						<a type="button" href="/happyhouse/bookmark/delete/${id}/${no}" onclick="arlert('${no} 삭제');" class="btn btn-danger">북마크에서 삭제</a>
+					</c:if>
+					<c:if test="${marked == false}">
+						<form method="post" action="/happyhouse/bookmark">
+							<input type="hidden" name="id" value="${id}" readonly/>
+							<input type="hidden" name="no" value="${no}" readonly/>
+							<input type="hidden" name="dong" value="${house.dong}" readonly />
+							<input type="hidden" name="aptName" value="${house.aptName}" readonly/>
+							<button id="addBtn" type="submit" class="btn btn-warning">북마크에 추가하기</button>
+						</form>
+					</c:if>
 				</c:if>
-				<c:if test="${marked == false}">
-					<form method="post" action="/happyhouse/bookmark">
-						<input name="id" value="${id}" readonly/>
-						<input name="no" value="${house.no}" readonly/>
-						<input name="dong" value="${house.dong}" readonly />
-						<input name="aptName" value="${house.aptName}" readonly/>
-						<button id="addBtn" type="submit" class="btn btn-warning">북마크에 추가하기</button>
-					</form>
-				</c:if>
-			</c:if>
+			</div>
+			<hr>
 
 			<!-- 주변 상권정보 검색 -->
 			<form>
