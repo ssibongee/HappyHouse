@@ -111,6 +111,7 @@
 			});//change
 		});//ready
 		function geocode(jsonData) {
+			initMap();
 			let idx = 0;
 			console.log(jsonData);
 			$.each(jsonData, function (index, vo) {
