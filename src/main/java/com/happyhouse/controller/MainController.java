@@ -2,8 +2,6 @@ package com.happyhouse.controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,14 +13,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.happyhouse.dto.BookMark;
 import com.happyhouse.dto.Commercial;
 import com.happyhouse.dto.HouseDeal;
+import com.happyhouse.dto.HouseInfo;
 import com.happyhouse.service.BookMarkService;
+import com.happyhouse.service.CommercialService;
 import com.happyhouse.service.HouseService;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
@@ -35,6 +32,9 @@ public class MainController<T> {
 	@Autowired
 	BookMarkService bmService;
 
+	@Autowired
+	CommercialService cservice;
+	
 	@GetMapping("/")
 	public String main(Model model, HttpSession session) {
 		model.addAttribute("title", "HAPPY HOUSE");
@@ -101,4 +101,30 @@ public class MainController<T> {
 		return "errorPage";//view page
 	}	
 
+	
+	// 주변 환경정보 검색
+	@ResponseBody
+	@GetMapping("/{no}/{condition}/{word}")
+	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition, @PathVariable String word) throws NumberFormatException, SQLException {
+		HouseInfo h = cservice.selectOne(no);
+		String lat = h.getLat().substring(0, 4);
+		String lng = h.getLng().substring(0, 5);
+		System.out.println(lat);
+		System.out.println(lng);
+		String dong = h.getDong();
+		System.out.println(dong);
+		System.out.println(condition);
+		System.out.println(word);
+		ArrayList<Commercial> list;
+		if(condition.equals("shopname"))
+			list = cservice.searchShop(condition, word, lat, lng, dong);
+		else
+			list = cservice.searchCode(condition, word, lat, lng, dong);
+		
+		for(Commercial c : list) {
+			System.out.println(c.toString());
+		}
+		
+		return list;
+	}
 }

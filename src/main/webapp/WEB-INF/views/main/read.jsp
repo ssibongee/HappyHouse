@@ -43,7 +43,67 @@
 					</form>
 				</c:if>
 			</c:if>
+
+			<!-- 주변 상권정보 검색 -->
+			<form>
+			<select name="options" id="options">
+  				<option value="shopname">가게이름</option>
+  				<option value="codename3">업종명</option>
+			</select>
+			<input type="text" id="word"></input>	
+			<button type="submit" id="submit">검색</button>	
+			</form>
+			<div id="map" style="width: 100%; height: 500px; margin: auto;"></div>
 		</div>
+		
+		<script>
+			$(document).ready(function() {
+				$("#submit").click(function() {
+					$.get(
+						"{root}/{no}/commercial",
+						{condition: $("#options").val(), no: ${house.no}  ,word:$("#word").val()}
+					)
+					
+				})
+			})
+			
+		
+		</script>		
+		
+		
+		
+		<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBz53kMLEDhvfaYo9r-4GuSn5zy4Lju4rM&callback=initMap"></script>
+		<script>
+		var multi = { lat: 37.5665734, lng: 126.978179 };
+		var map;
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: multi,
+				zoom: 12
+			});
+			//var marker = new google.maps.Marker({ position: multi, map: map });
+		}
+		function addMarker(tmpLat, tmpLng, aptName, no) {
+			var marker = new google.maps.Marker({
+				position: new google.maps.LatLng(parseFloat(tmpLat), parseFloat(tmpLng)),
+				label: aptName,
+				title: aptName
+			});
+			marker.addListener('click', function () {
+				map.setZoom(20);
+				map.setCenter(marker.getPosition());
+				callHouseDealInfo(no);
+			});
+			marker.setMap(map);
+		}
+		function callHouseDealInfo(no) {
+			document.getElementById("pageform").action = "${root}/"+no;
+			document.getElementById("pageform").submit();
+		}
+		</script>
+
 		
 		 <hr>
 	 <!-- Footer -->
