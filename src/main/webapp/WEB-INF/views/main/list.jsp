@@ -129,7 +129,7 @@
 						tmpLng = data.results[0].geometry.location.lng;
 						$("#lat_" + index).text(tmpLat);
 						$("#lng_" + index).text(tmpLng);
-						addMarker(tmpLat, tmpLng, vo.AptName, vo.no);
+						addMarker(tmpLat, tmpLng, vo.aptName, vo.no);
 					}
 					, "json"
 				);//get

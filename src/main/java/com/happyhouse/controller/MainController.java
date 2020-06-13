@@ -99,4 +99,10 @@ public class MainController<T> {
 		return "errorPage";//view page
 	}	
 
+	
+	// 주변 환경정보 검색
+	@GetMapping("/{no}/{condition}/{word}")
+	public String search(@PathVariable String condition, @PathVariable String word) {
+		return null;
+	}
 }
