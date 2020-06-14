@@ -66,6 +66,9 @@ public class MainController<T> {
 	public String read(@PathVariable String no, Model model, HttpSession session) throws SQLException {
 		String id = (String)session.getAttribute("id");
 		HouseDeal h = service.search(Integer.parseInt(no));
+		HouseInfo hi = cservice.selectOne(no);
+		model.addAttribute("lat", hi.getLat());
+		model.addAttribute("lng", hi.getLng());
 		model.addAttribute("house", h);
 		model.addAttribute("no", no);
 		model.addAttribute("marked", bmService.isMarked(id, Integer.parseInt(no)));
@@ -105,8 +108,14 @@ public class MainController<T> {
 	
 	// 주변 환경정보 검색
 	@ResponseBody
-	@GetMapping("/{no}/{condition}/{word}")
-	public ArrayList<Commercial> search(@PathVariable String no, @PathVariable String condition, @PathVariable String word) throws NumberFormatException, SQLException {
+	@GetMapping("/commercial")
+	public ArrayList<Commercial> search(String no, String condition, String word) throws SQLException {
+		no.replace("\"", "");
+		condition.replace("\"", "");
+		word.replace("\"", "");
+		System.out.println(no);
+		System.out.println(condition);
+		System.out.println(word);
 		HouseInfo h = cservice.selectOne(no);
 		String lat = h.getLat().substring(0, 4);
 		String lng = h.getLng().substring(0, 5);
