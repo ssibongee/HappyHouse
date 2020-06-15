@@ -40,7 +40,6 @@ public class NoticeController {
 	}
 
 	// 글 작성
-
 	@PostMapping("/notice/insert")
 	public String insert(NoticeInfo n) throws SQLException {
 		service.insert(n);
@@ -48,7 +47,6 @@ public class NoticeController {
 	}
 
 	// 글 읽기
-
 	@GetMapping("/notice/{num}")
 	public String read(@PathVariable String num, Model model) throws SQLException {
 		NoticeInfo n = service.detail(num);

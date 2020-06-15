@@ -29,7 +29,7 @@
 						<td width=600 style="padding-left: 10">&nbsp;${n.title }</td>
 						<td width=150 style="padding-left: 10">&nbsp;${n.count }</td>
 						<td width=490 style="padding-left: 10">&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="/happyhouse/notice/update/${ n.num }">조회</a></td>
+						<a href="/happyhouse/notice/${ n.num }">조회</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

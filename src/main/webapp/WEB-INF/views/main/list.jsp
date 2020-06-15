@@ -51,7 +51,7 @@
 		</div>
 		<br>
 
-		<div id="map" style="width: 95%; height: 500px; margin: auto;"></div>
+		<div id="map" style="width: 90%; height: 500px; margin: auto;"></div>
 	</div>
 
 	<!--  map start  -->

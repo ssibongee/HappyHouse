@@ -53,7 +53,7 @@
 			</tr>
 		</table>
 		<div>
-			<button onclick="window.history.go(-1)" class="btn btn-primary">돌아가기</button>
+			<a type="button" href="/happyhouse/" class="btn btn-primary">돌아가기</a>
 		</div>
 		<div>
 			<c:if test="${!empty id}">
