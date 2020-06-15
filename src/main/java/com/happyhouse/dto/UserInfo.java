@@ -8,6 +8,8 @@ public class UserInfo {
 	private String address;
 	private String phone;
 	
+	public UserInfo() {};
+	
 	public UserInfo(String id, String password, String name, String address, String phone) {
 		this.id = id;
 		this.password = password;

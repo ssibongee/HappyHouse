@@ -12,6 +12,10 @@
 	<select id="findPw" resultType="com.happyhouse.dto.UserInfo">
 		select * from userinfo where name = #{name} and id = #{id} and phone = #{phone}
 	</select>
+	
+	<update id="modifyPw">
+		update userinfo set password = #{password} where id = #{id}
+	</update>
 
 	<select id="detail" resultType="com.happyhouse.dto.UserInfo">
 		select * from userinfo where id = #{id}

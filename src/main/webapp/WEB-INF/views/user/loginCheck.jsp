@@ -14,7 +14,7 @@
         </div>
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
-            <input type="password" class="form-control" placeholder="Password" name="password" required data-validation-required-message="Please enter your password">
+            <input style="font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;" type="password" class="form-control" placeholder="Password" name="password" required data-validation-required-message="Please enter your password">
             <p class="help-block text-danger"></p>
           </div>
         </div>

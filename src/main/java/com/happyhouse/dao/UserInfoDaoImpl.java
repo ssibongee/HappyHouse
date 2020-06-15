@@ -55,4 +55,9 @@ public class UserInfoDaoImpl implements UserInfoDao {
 	public UserInfo findPw(String name, String id, String phone) {
 		return mapper.findPw(name, id, phone);
 	}
+
+	@Override
+	public void modifyPw(String id, String password) {
+		mapper.modifyPw(id, password);
+	}
 }

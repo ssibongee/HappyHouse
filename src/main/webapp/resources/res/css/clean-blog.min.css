@@ -3,10 +3,14 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/master/LICENSE)
  */
+ 
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
 body {
 	font-size: 20px;
 	color: #212529;
-	font-family: Lora, 'Times New Roman', serif
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 p {
@@ -18,9 +22,16 @@ p a {
 	text-decoration: underline
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+
+h1 {
 	font-weight: 800;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+h2, h3, h4, h5, h6 {
+	font-weight: 800;
+	font-family: 'Hanna', sans-serif;
 }
 
 a {
@@ -85,7 +96,8 @@ img::-moz-selection {
 	position: absolute;
 	border-bottom: 1px solid #e9ecef;
 	background-color: #fff;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+/* 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif */
+	font-family: 'Hanna', sans-serif;
 }
 
 #mainNav .navbar-brand {
@@ -211,7 +223,9 @@ header.masthead .page-heading .subheading, header.masthead .site-heading .subhea
 	line-height: 1.1;
 	display: block;
 	margin: 10px 0 0;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+/* 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif */
+/* 	font-family: 'Jeju Gothic', sans-serif; */
+	font-family: 'Hanna', sans-serif;
 }
 
 @media only screen and (min-width:768px) {
@@ -234,14 +248,16 @@ header.masthead .post-heading .subheading {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 10px 0 30px;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+/* 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif */
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 header.masthead .post-heading .meta {
 	font-size: 20px;
 	font-weight: 300;
 	font-style: italic;
-	font-family: Lora, 'Times New Roman', serif
+/* 	font-family: Lora, 'Times New Roman', serif */
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 header.masthead .post-heading .meta a {
@@ -318,13 +334,15 @@ header.masthead .post-heading .meta a {
 	border-radius: 0;
 	background: 0 0;
 	box-shadow: none !important;
-	font-family: Lora, 'Times New Roman', serif
+/* 	font-family: Lora, 'Times New Roman', serif */
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 .floating-label-form-group input::-webkit-input-placeholder,
 	.floating-label-form-group textarea::-webkit-input-placeholder {
 	color: #868e96;
-	font-family: Lora, 'Times New Roman', serif
+/* 	font-family: Lora, 'Times New Roman', serif */
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 .floating-label-form-group label {
@@ -380,7 +398,8 @@ footer .copyright {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	border-radius: 0;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
+/* 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif */
+	font-family: 'Jeju Gothic', sans-serif;
 }
 
 .btn-primary {

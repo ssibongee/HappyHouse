@@ -50,5 +50,10 @@ public class UserInfoServiceImpl implements UserInfoService {
 		return dao.findPw(name, id, phone);
 	}
 
+	@Override
+	public void modifyPw(String id, String password) {
+		dao.modifyPw(id, password);
+	}
+
 
 }

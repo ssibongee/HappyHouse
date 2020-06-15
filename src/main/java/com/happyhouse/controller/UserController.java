@@ -1,8 +1,11 @@
 package com.happyhouse.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,23 +35,22 @@ public class UserController {
 	
 	// 로그인
 	@PostMapping("/login")
-	public String login(String id, String password, HttpServletRequest request, HttpSession session, RedirectAttributes redirectAttributes) {
+	public String login(String id, String password, Model model, HttpServletRequest request, HttpSession session,
+		   HttpServletResponse response) throws IOException {
 		// 아이디 체크 처리 해야함
 		
 		System.out.println("id : "+id);
 		System.out.println("password : "+password);
 		
 		if(service.login(id, password) == true) {			
-			redirectAttributes.addFlashAttribute("id", id);
 			session.setAttribute("id", id);
 			session.removeAttribute("msg");
+			model.addAttribute("loginChk", true);
 		} else {
-			session.setAttribute("msg", "아이디와 비밀번호를 확인해주세요");
+			model.addAttribute("loginChk", false);
 		}
-		String referer = request.getHeader("Referer");
-		// 로그인 하고 메인 페이지
-		System.out.println("redirect:"+referer);
-		return "redirect:"+referer;
+		model.addAttribute("title", "HAPPY HOUSE");
+		return "/main/list";
 	}
 	
 	@GetMapping("/join")
@@ -115,34 +117,45 @@ public class UserController {
 	  
 	  //비밀번호 수정 페이지로 이동
 	  @GetMapping("/findPw")
-	  public String findPw(String pw, Model model) {
+	  public String findPw(Model model) {
 		  model.addAttribute("title", "CHANGE PW");
 		  model.addAttribute("desc", "비밀번호 수정 페이지입니다.");
 		  return "/user/passwordSearch";
 	  }
+	  
+	  //비밀번호 수정 위한 본인인증 
+	  @PostMapping("/findPw")
+	  public String findPw2(String name, String id, String phone, Model model) {
+		  
+		  if(service.findPw(name, id, phone) != null) {
+			  model.addAttribute("title", "CHANGE PW");
+			  model.addAttribute("desc", "비밀번호 수정 페이지입니다. ");	
+			  model.addAttribute("temp_id", id);
+			  return "/user/modifyPassword";
+			  
+		  } else {
+			  model.addAttribute("title", "CHANGE PW");
+			  model.addAttribute("desc", "비밀번호 수정 페이지입니다.");
+			  model.addAttribute("auth", false);
+			  return "/user/passwordSearch";
+		  }
+	  }
 
 	  //비밀번호 수정
 	  @PostMapping("/changePw") 
-	  public String changePw(UserInfo u, HttpSession session) {
-		  service.update(u);
-		  return "redirect:/";
+	  public String changePw(String temp_id, String password1, String password2, HttpSession session, Model model) {
+		  System.out.println("id : "+temp_id);
+		  System.out.println("pw1 : "+password1);
+		  System.out.println("pw2 : "+password2);
+		  if(password1.equals(password2)) {
+			  service.modifyPw(temp_id, password1);
+			  return "redirect:/";
+		  }else {
+			  model.addAttribute("pass_msg", "비밀번호를 다시 확인해주세요.");
+			  return "/user/modifyPassword";  
+		  }	
 	  }
 
-	  //비밀번호 수정 위한 본인인증 
-	  @PostMapping("/findPw")
-	  public String findPw2(String name, String id, String phone, HttpServletRequest request, RedirectAttributes redirectAttributes) {
-		  if(service.findPw(name, id, phone) != null) {
-			  request.setAttribute("title", "CHANGE PW");
-			  request.setAttribute("desc", "비밀번호 수정 페이지입니다. ");
-			  request.setAttribute("auth_msg", "본인 인증에 성공하였습니다.");			  
-			  return "/user/modifyPassword";
-
-		  } else {
-			  redirectAttributes.addFlashAttribute("auth_msg", "본인 인증에 실패하였습니다.");
-			  String referer = request.getHeader("Referer");
-			  return "redirect:"+referer;
-		  }
-	  }
 	  
 	  // 회원 탈퇴
 	  @GetMapping("/delete")
@@ -153,12 +166,35 @@ public class UserController {
 		  return "/user/deleteSuccess";
 	  }
 	  
+	  @GetMapping("/check")
+	  public String check() {
+		  return "/user/passwordCheck";
+	  }
+	  
+	  @PostMapping("/checkPass")
+	  public String checkPass(String password, HttpSession session, Model model, HttpServletRequest request) {
+		  String id = (String) session.getAttribute("id");
+		  
+		  if(service.login(id, password) == true) {
+			  session.invalidate();
+			  service.delete(id);
+			  return "/user/deleteSuccess";			  
+		  } else {
+			  model.addAttribute("msg", "잘못된 비밀번호 입니다. 다시 입력해주세요!");
+//			  String referer = request.getHeader("Referer");
+//			  return "redirect:"+referer;
+			  return "/user/passwordCheck";
+		  }
+	  }
+	  
 //	  @ResponseBody
-//	  @DeleteMapping("/delete")
-//	  public void delete(HttpSession session, Model model) {
+//	  @DeleteMapping("/ajaxDelete")
+//	  public String ajaxDelete(HttpSession session, Model model) {
 //		  String id = (String)session.getAttribute("id");
 //		  service.delete(id);
 //		  session.invalidate();
+//		  
+//		  return "success delete";
 //	  }
 	  
 	  @GetMapping("/myPage")

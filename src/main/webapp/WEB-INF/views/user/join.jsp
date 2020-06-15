@@ -36,7 +36,9 @@
 	          <div class="control-group">
 	            <div class="form-group floating-label-form-group controls">
 	              <label>PW</label>
-	              <input type="password" class="form-control" placeholder="PASSWORD" name="password" required data-validation-required-message="Please enter your id">
+	              <input type="password" class="form-control" placeholder="PASSWORD" name="password"
+	              		required data-validation-required-message="Please enter your id"
+	              		style="font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
 	              <p class="help-block text-danger"></p>
 	            </div>
 	          </div>

@@ -14,6 +14,14 @@
 	<!-- Page Header -->
 	<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 	
+	<script>
+		$(document).ready(function(){
+			if(${loginChk==false}){
+				alert("아이디 혹은 비밀번호를 확인해주세요!!!");
+			}
+		});
+	</script>
+	
 	<form name="pageform" id="pageform" method="GET" action="">
 		<input type="hidden" name="no" id="no" value="">
 	</form>
@@ -43,7 +51,7 @@
 		</div>
 		<br>
 
-		<div id="map" style="width: 100%; height: 500px; margin: auto;"></div>
+		<div id="map" style="width: 95%; height: 500px; margin: auto;"></div>
 	</div>
 
 	<!--  map start  -->

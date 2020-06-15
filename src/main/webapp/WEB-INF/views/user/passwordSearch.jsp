@@ -13,24 +13,46 @@
 		
 		<!-- Page Header -->
 		<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
+
+		<script>
+			$(document).ready(function(){
+				if(${auth==false}){
+					alert("회원정보를 확인해주세요!!!");
+				}
+			});
+		</script>
 		
-		<div class="container" align="center">
-<!-- 			<h1>비밀번호 찾기</h1> -->
-			<form method="post" action="/happyhouse/findPw">
-				<c:if test="${!empty auth_msg} ">
-					<p>${auth_msg }</p>
-				</c:if>
-				<table>
-					<tr><td><div align="right">이름 *</div></td><td><input type="text" name="name" placeholder="이름"></td></tr>
-					<tr><td>&nbsp;&nbsp;</td></tr>
-					<tr><td><div align="right">아이디 *</div></td><td><input type="text" name="id" placeholder="아이디"></td></tr>
-					<tr><td>&nbsp;&nbsp;</td></tr>
-					<tr><td><div align="right">전화번호 *</div></td><td><input type="text" name="phone" placeholder="전화번호"></td></tr>
-				</table>
-				<br>
-			   	<input type="submit" class="btn btn-primary" value="비밀번호 변경">
-				<input type="reset" class="btn btn-primary" value="돌아가기" onClick="location.href='/happyhouse/'">
-			</form>
+		<div class="container">
+			<h3>본인 확인</h3>
+			<p>본인 확인을 위해 아래 내용을 입력해주세요</p>
+			<div class="row">
+		      <div class="col-lg-8 col-md-10 mx-auto">
+		        <form method="post" action="/happyhouse/findPw">
+		          <div class="control-group">
+		            <div class="form-group floating-label-form-group controls">
+		              <label>이름</label>
+		              <input type="text" class="form-control" placeholder="이름" name="name"
+		              	required data-validation-required-message="Please enter your name">
+		              <p class="help-block text-danger"></p>
+		            </div>
+		            <div class="form-group floating-label-form-group controls">
+		              <label>아이디</label>
+		              <input type="text" class="form-control" placeholder="아이디" name="id"
+		              	required data-validation-required-message="Please enter your name">
+		              <p class="help-block text-danger"></p>
+		            </div>
+		            <div class="form-group floating-label-form-group controls">
+		              <label>전화번호</label>
+		              <input type="text" class="form-control" placeholder="전화번호" name="phone"
+		              	required data-validation-required-message="Please enter your name">
+		              <p class="help-block text-danger"></p>
+		            </div>
+		          </div>
+		          <button class="btn btn-primary">본인 인증</button>
+		          <input class="btn btn-primary" value="메인으로" onClick="location.href='/happyhouse/'">
+		        </form>
+		      </div>
+		    </div>
 		</div>
 		
 		<hr>

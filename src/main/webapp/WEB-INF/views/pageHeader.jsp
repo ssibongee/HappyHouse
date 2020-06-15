@@ -52,12 +52,6 @@
 								  LOGOUT 
 							</a>
 						</span>
-<!-- 							<a href="/happyhouse/user" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;"> -->
-<!-- 							  	회원정보 -->
-<!-- 							</a>	 -->
-<!-- 							<a href="/happyhouse/delete" id="delete_btn" type="button" class="btn btn-primary btn-lg" style="padding-top: 5px; padding-bottom: 5px;"> -->
-<!-- 							 	 회원 탈퇴  -->
-<!-- 							</a>	 -->
 						</c:if>
 					</div>
 				</div>

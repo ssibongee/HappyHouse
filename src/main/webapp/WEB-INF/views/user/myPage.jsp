@@ -30,11 +30,7 @@
 							<h2>북마크</h2>
 						</a>
 						<hr>
-						<a href="#">
-							<h2>관심 지역</h2>
-						</a>
-						<hr>
-						<a href="/happyhouse/delete">
+						<a href="/happyhouse/check">
 							<h2>회원 탈퇴</h2>
 						</a>
 					</div>
@@ -42,7 +38,7 @@
 			</div>
 		</div>
 		
-		 <!-- Footer -->
+	 <!-- Footer -->
       <%@ include file="/WEB-INF/views/footer.jsp"%>
 	
 	  <!-- JavaScript -->

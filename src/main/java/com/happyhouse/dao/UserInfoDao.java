@@ -15,6 +15,9 @@ public interface UserInfoDao {
 	// 비밀번호 변경 확인
 	public UserInfo findPw(String name, String id, String phone);
 	
+	// 비밀번호 변경
+	public void modifyPw(String id, String password);
+	
 	// 사용자 정보 수정
 	public void update(UserInfo u);
 	
