@@ -18,7 +18,7 @@
 		<h1>아파트 거래 정보</h1>
 		<table class="table">
 			<tr>
-				<th rowspan="10"><img src="${ root }/img/${house.img}"
+				<th rowspan="10"><img src="resources/apt_img/${img}"
 					width="300" height="300" /></th>
 				<th></th>
 				<th></th>
@@ -89,6 +89,7 @@
 	</div>
 
 	<script>
+	console.log("<c:out value='${img}'/>");
 		$("#submit").click(function() {
 			var condition = $("#options").val();
 			var no = "<c:out value='${no}'/>";

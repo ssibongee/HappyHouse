@@ -75,6 +75,7 @@ public class MainController<T> {
 		HouseInfo hi = cservice.selectOne(no);
 		model.addAttribute("lat", hi.getLat());
 		model.addAttribute("lng", hi.getLng());
+		model.addAttribute("img", hi.getImg());
 		model.addAttribute("house", h);
 		model.addAttribute("no", no);
 		model.addAttribute("marked", bmService.isMarked(id, Integer.parseInt(no)));
