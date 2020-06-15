@@ -24,6 +24,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="/happyhouse/sitemap">사이트맵</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/happyhouse/news">관련기사</a>
+				</li>
 				
 				<c:if test="${!empty id}">
 					<li class="nav-item">

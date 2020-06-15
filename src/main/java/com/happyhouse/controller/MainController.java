@@ -2,6 +2,7 @@ package com.happyhouse.controller;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -18,9 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.happyhouse.dto.Commercial;
 import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
+import com.happyhouse.dto.News;
 import com.happyhouse.service.BookMarkService;
 import com.happyhouse.service.CommercialService;
 import com.happyhouse.service.HouseService;
+import com.happyhouse.service.NewsService;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
 @Controller
@@ -28,6 +31,9 @@ public class MainController<T> {
 
 	@Autowired
 	HouseService service;
+	
+	@Autowired
+	NewsService nservice;
 	
 	@Autowired
 	BookMarkService bmService;
@@ -136,5 +142,14 @@ public class MainController<T> {
 		}
 		
 		return list;
+	}
+	
+	
+	@GetMapping("/news")
+	public String getNews(Model model) throws Exception {
+		//System.out.println(.toString());
+		List<News> list = nservice.getRecentNews();
+		model.addAttribute("list", list);
+		return "/news/list";
 	}
 }
