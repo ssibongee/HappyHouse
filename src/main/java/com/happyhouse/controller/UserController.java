@@ -181,21 +181,9 @@ public class UserController {
 			  return "/user/deleteSuccess";			  
 		  } else {
 			  model.addAttribute("msg", "잘못된 비밀번호 입니다. 다시 입력해주세요!");
-//			  String referer = request.getHeader("Referer");
-//			  return "redirect:"+referer;
 			  return "/user/passwordCheck";
 		  }
 	  }
-	  
-//	  @ResponseBody
-//	  @DeleteMapping("/ajaxDelete")
-//	  public String ajaxDelete(HttpSession session, Model model) {
-//		  String id = (String)session.getAttribute("id");
-//		  service.delete(id);
-//		  session.invalidate();
-//		  
-//		  return "success delete";
-//	  }
 	  
 	  @GetMapping("/myPage")
 		public String introduce(Model model) {

@@ -38,7 +38,7 @@
 		        <div id="success"></div>
 		        <div class="form-group">
 		          <button type="submit" class="btn btn-primary" id="sendMessageButton">등록하기</button>
-		          <input type="reset" class="btn btn-primary" value="돌아가기" onClick="location.href='/happyhouse/notice/'">
+		          <input type="reset" class="btn btn-primary" value="돌아가기" onClick="location.href='/happyhouse/notice'">
 		        </div>
 		      </form>
 		    </div>

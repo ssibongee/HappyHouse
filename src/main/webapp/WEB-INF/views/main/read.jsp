@@ -4,10 +4,10 @@
 <c:set var="root" value="${ pageContext.request.contextPath }" />
 <!DOCTYPE html>
 <html>
-<!-- header -->
-<%@ include file="/WEB-INF/views/head.jsp"%>
-
-<body>
+	<!-- header -->
+	<%@ include file="/WEB-INF/views/head.jsp"%>
+	
+	<body>
 	<!-- Navigation -->
 	<%@ include file="/WEB-INF/views/nav.jsp"%>
 
@@ -57,6 +57,8 @@
 		</div>
 		<div>
 			<c:if test="${!empty id}">
+				<input type="button" class="btn btn-primary" value="내 북마크 보기"
+						onclick="window.open('/happyhouse/popup', 'My Bookmark', 'width=1100px;, height=600px;')">
 				<c:if test="${marked == true}">
 					<input type="hidden" name="id" value="${id}" readonly />
 					<input type="hidden" name="no" value="${no}" readonly />

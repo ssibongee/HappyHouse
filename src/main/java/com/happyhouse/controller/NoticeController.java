@@ -70,14 +70,6 @@ public class NoticeController {
 		service.update(n);
 		return "redirect:/notice/";
 	}
-	/*
-	 * // 글 수정
-	 * 
-	 * @PutMapping("/notice/{num}") public String update(@PathVariable String num,
-	 * NoticeInfo n) throws SQLException { service.update(n); return
-	 * "redirect:/notice/" + num; }
-	 */
-	// 글 삭제
 
 	@GetMapping("/notice/delete/{num}")
 	public String delete(@PathVariable String num) throws SQLException {

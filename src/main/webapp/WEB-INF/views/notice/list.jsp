@@ -8,11 +8,11 @@
 	<%@ include file="/WEB-INF/views/head.jsp"%>
 	
 	<body>
-		<!-- Navigation -->
-		<%@ include file="/WEB-INF/views/nav.jsp"%>
-		
-		<!-- Page Header -->
-		<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
+	<!-- Navigation -->
+	<%@ include file="/WEB-INF/views/nav.jsp"%>
+	
+	<!-- Page Header -->
+	<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 
 	<div class="container" align="center">
 		<table class="table">
@@ -26,10 +26,10 @@
 				<c:forEach var="n" items="${list }">
 					<tr>
 						<td width=490 style="padding-left: 10">&nbsp;${n.num }</td>
-						<td width=490 style="padding-left: 10">&nbsp;${n.title }</td>
-						<td width=490 style="padding-left: 10">&nbsp;${n.count }</td>
-						<td width=490 style="padding-left: 10">&nbsp;<a
-							href="/happyhouse/notice/${ n.num }">조회</a></td>
+						<td width=600 style="padding-left: 10">&nbsp;${n.title }</td>
+						<td width=150 style="padding-left: 10">&nbsp;${n.count }</td>
+						<td width=490 style="padding-left: 10">&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="/happyhouse/notice/update/${ n.num }">조회</a></td>
 					</tr>
 				</c:forEach>
 			</c:if>

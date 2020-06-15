@@ -51,6 +51,16 @@ public class BookMarkController {
 		return "redirect:/"+bm.getNo();
 		// 추가 하고 그 페이지로 다시
 	}
+	
+	@GetMapping("/popup")
+	public String popup(Model model, HttpSession session) {
+		String id = (String) session.getAttribute("id");
+		List<BookMark> list = service.getAllBookMark(id);
+		if (list.size() != 0) {
+			model.addAttribute("list", list);
+		}
+		return "user/bookmark_popup";
+	}
 
 	@GetMapping("/bookmark/delete/{id}/{no}")
 	public String deleteBookMark(HttpServletRequest request, @PathVariable int no, @PathVariable String id) throws SQLException {

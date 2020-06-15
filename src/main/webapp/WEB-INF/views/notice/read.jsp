@@ -41,14 +41,10 @@
 				</tr>
 			</table>
 			<br>
-			<form action="/happyhouse/notice" method="get">
-				<button type="submit" class="btn btn-primary" id="sendMessageButton">확인</button>
-			</form>
-<!-- 			<a href="list.notice">확인</a><br><br> -->
-			<br><br>
-			<c:if test="${user.id == 'admin' }">
-				<a href="updateForm.notice?num=${notice.num }">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="delete.notice?num=${notice.num }">삭제하기</a>
+			<button type="submit" class="btn btn-primary" id="sendMessageButton" onClick="location.href='/happyhouse/notice'">확인</button>
+			<c:if test="${id == 'admin' }">
+				<a href="/happyhouse/notice/update/${notice.num}">수정하기</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="/happyhouse/notice/delete/${notice.num }">삭제하기</a>
 			</c:if>
 		</div> 
 		
