@@ -36,7 +36,7 @@ public class UserController {
 	// 로그인
 	@PostMapping("/login")
 	public String login(String id, String password, Model model, HttpServletRequest request, HttpSession session,
-		   HttpServletResponse response) throws IOException {
+		   HttpServletResponse response, RedirectAttributes redirectAttributes) throws IOException {
 		// 아이디 체크 처리 해야함
 		
 		System.out.println("id : "+id);
@@ -47,10 +47,13 @@ public class UserController {
 			session.removeAttribute("msg");
 			model.addAttribute("loginChk", true);
 		} else {
-			model.addAttribute("loginChk", false);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('비밀번호와 아이디를 확인해주세요.'); history.back();</script>");
+			out.flush();
 		}
-		model.addAttribute("title", "HAPPY HOUSE");
-		return "/main/list";
+		String referer = request.getHeader("Referer");
+		return "redirect:"+referer;
 	}
 	
 	@GetMapping("/join")
