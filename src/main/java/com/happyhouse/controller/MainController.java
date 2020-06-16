@@ -20,10 +20,12 @@ import com.happyhouse.dto.Commercial;
 import com.happyhouse.dto.HouseDeal;
 import com.happyhouse.dto.HouseInfo;
 import com.happyhouse.dto.News;
+import com.happyhouse.dto.QnA;
 import com.happyhouse.service.BookMarkService;
 import com.happyhouse.service.CommercialService;
 import com.happyhouse.service.HouseService;
 import com.happyhouse.service.NewsService;
+import com.happyhouse.service.QnAService;
 
 @CrossOrigin(origins = { "*" }, maxAge = 6000)
 @Controller
@@ -40,6 +42,9 @@ public class MainController<T> {
 
 	@Autowired
 	CommercialService cservice;
+	
+	@Autowired
+	QnAService qservice;
 	
 	@GetMapping("/")
 	public String main(Model model, HttpSession session) {
@@ -153,4 +158,7 @@ public class MainController<T> {
 		model.addAttribute("list", list);
 		return "/news/list";
 	}
+	
+	
+
 }

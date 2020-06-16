@@ -51,7 +51,8 @@
 	</update>
 	
 	<update id="updateReply">
-		update qna_board set reply_content = #{replyContent}, reply_datetime = sysdate() 
+		update qna_board set reply_content = #{replyContent}, reply_datetime = sysdate(),
+		reply_userid = #{replyUserid}
 		where qna_no = #{qnaNo} 
 	</update>
 	

@@ -3,17 +3,17 @@ package com.happyhouse.dto;
 import java.util.Date;
 
 public class QnA {
-	private int qnaNo;
+	private String qnaNo;
 	private String qnaTitle;
 	private String qnaContent;
 	private String qnaUserid;
-	private Date qnaDatetime;
+	private String qnaDatetime;
 	private String replyContent;
-	private Date replyDatetime;
+	private String replyDatetime;
 	private String replyUserid;
 
-	public QnA(int qnaNo, String qnaTitle, String qnaContent, String qnaUserid, Date qnaDatetime, String replyContent,
-			Date replyDatetime, String replyUserid) {
+	public QnA(String qnaNo, String qnaTitle, String qnaContent, String qnaUserid, String qnaDatetime, String replyContent,
+			String replyDatetime, String replyUserid) {
 		this.qnaNo = qnaNo;
 		this.qnaTitle = qnaTitle;
 		this.qnaContent = qnaContent;
@@ -24,11 +24,11 @@ public class QnA {
 		this.replyUserid = replyUserid;
 	}
 
-	public int getQnaNo() {
+	public String getQnaNo() {
 		return qnaNo;
 	}
 
-	public void setQnaNo(int qnaNo) {
+	public void setQnaNo(String qnaNo) {
 		this.qnaNo = qnaNo;
 	}
 
@@ -56,11 +56,11 @@ public class QnA {
 		this.qnaUserid = qnaUserid;
 	}
 
-	public Date getQnaDatetime() {
+	public String getQnaDatetime() {
 		return qnaDatetime;
 	}
 
-	public void setQnaDatetime(Date qnaDatetime) {
+	public void setQnaDatetime(String qnaDatetime) {
 		this.qnaDatetime = qnaDatetime;
 	}
 
@@ -72,11 +72,11 @@ public class QnA {
 		this.replyContent = replyContent;
 	}
 
-	public Date getReplyDatetime() {
+	public String getReplyDatetime() {
 		return replyDatetime;
 	}
 
-	public void setReplyDatetime(Date replyDatetime) {
+	public void setReplyDatetime(String replyDatetime) {
 		this.replyDatetime = replyDatetime;
 	}
 
