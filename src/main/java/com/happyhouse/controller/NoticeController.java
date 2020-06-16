@@ -43,7 +43,7 @@ public class NoticeController {
 	@PostMapping("/notice/insert")
 	public String insert(NoticeInfo n) throws SQLException {
 		service.insert(n);
-		return "redirect:/notice/";
+		return "redirect:/notice";
 	}
 
 	// 글 읽기
@@ -59,6 +59,8 @@ public class NoticeController {
 	@GetMapping("/notice/update/{num}")
 	public String updateForm(@PathVariable String num, Model model) throws SQLException {
 		NoticeInfo n = service.detail(num);
+		n.setContent(n.getContent().trim());
+		model.addAttribute("title", "공지사항 수정");
 		model.addAttribute("notice", n);
 		return "/notice/updateForm";
 	}
@@ -66,13 +68,13 @@ public class NoticeController {
 	@PostMapping("/notice/update") 
 	public String update(NoticeInfo n) throws SQLException {
 		service.update(n);
-		return "redirect:/notice/";
+		return "redirect:/notice";
 	}
 
 	@GetMapping("/notice/delete/{num}")
 	public String delete(@PathVariable String num) throws SQLException {
 		service.delete(num);
-		return "redirect:/notice/";
+		return "redirect:/notice";
 	}
 
 }
