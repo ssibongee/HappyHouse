@@ -22,7 +22,6 @@
 				<tr><td><b>4. 회원관리</b></td></tr>
 				<c:if test="${id == null}">
 					<tr><td>&nbsp;&nbsp;&nbsp;>&nbsp;<a href="/happyhouse/join">회원가입</a></td></tr>
-					<tr><td>&nbsp;&nbsp;&nbsp;>&nbsp;<a href="/happyhouse/login">로그인</a></td></tr>
 					<tr><td>&nbsp;&nbsp;&nbsp;>&nbsp;<a href="/happyhouse/findPw">비밀번호 찾기</a></td></tr>
 				</c:if>
 				<c:if test="${id != null}">
