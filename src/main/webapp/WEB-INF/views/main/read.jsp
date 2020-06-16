@@ -54,8 +54,6 @@
 		</table>
 		<div>
 			<a type="button" href="/happyhouse/" class="btn btn-primary">돌아가기</a>
-		</div>
-		<div>
 			<c:if test="${!empty id}">
 				<input type="button" class="btn btn-primary" value="내 북마크 보기"
 						onclick="window.open('/happyhouse/popup', 'My Bookmark', 'width=1100px;, height=600px;')">
@@ -66,13 +64,12 @@
 						onclick="arlert('${no} 삭제');" class="btn btn-danger">북마크에서 삭제</a>
 				</c:if>
 				<c:if test="${marked == false}">
-					<form method="post" action="/happyhouse/bookmark">
+					<form method="post" action="/happyhouse/bookmark" style="display:inline">
 						<input type="hidden" name="id" value="${id}" readonly /> <input
 							type="hidden" name="no" value="${no}" readonly /> <input
 							type="hidden" name="dong" value="${house.dong}" readonly /> <input
 							type="hidden" name="aptName" value="${house.aptName}" readonly />
-						<button id="addBtn" type="submit" class="btn btn-warning">북마크에
-							추가하기</button>
+						<button id="addBtn" type="submit" class="btn btn-warning">북마크에 추가하기</button>
 					</form>
 				</c:if>
 			</c:if>
