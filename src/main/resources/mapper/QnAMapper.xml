@@ -14,7 +14,7 @@
 			reply_datetime as replyDatetime,
 			reply_userid as replyUserid
 			from qna_board
-			order by qna_no
+			order by qna_no desc
 	</select>
 
 	<select id="selectOne" resultType="com.happyhouse.dto.QnA">

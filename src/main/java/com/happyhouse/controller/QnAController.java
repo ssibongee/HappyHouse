@@ -31,6 +31,7 @@ public class QnAController {
 	public String selectAll(Model model) throws SQLException{
 		List<QnA> list = service.selectAll();
 		model.addAttribute("list", list);
+		model.addAttribute("title","Q&A");
 		return "/qna/list";
 	}
 	
@@ -53,7 +54,7 @@ public class QnAController {
 	public String updatePage(QnA q, HttpSession session) throws SQLException {
 		System.out.println(q.toString());
 		String id = (String)session.getAttribute("id");
-		if(id.equals("admin")) 
+		if(id.equals("admin") && q.getReplyContent().trim() != "") 
 			service.updateReply(q);
 		else
 			service.update(q);

@@ -12,6 +12,9 @@
 		<!-- Page Header -->
 		<%@ include file="/WEB-INF/views/pageHeader.jsp"%>
 		
+		<!-- side bar -->
+		<%@ include file="/WEB-INF/views/side.jsp"%>
+		
 		<c:if test="${!empty id}">
 			<div class="container">
 				<h3>비밀번호 확인</h3>

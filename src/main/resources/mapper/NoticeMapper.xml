@@ -6,7 +6,7 @@
 <mapper namespace="com.happyhouse.mapper.NoticeMapper">
 
 	<select id="searchAll" resultType="com.happyhouse.dto.NoticeInfo">
-		select * from notice;
+		select * from notice order by num desc
 	</select>
 
 	<select id="detail" resultType="com.happyhouse.dto.NoticeInfo">
